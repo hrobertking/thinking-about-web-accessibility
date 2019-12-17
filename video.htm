@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Video</title>
+    <meta charset="UTF-8">
+    <link href="video.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Video</h1>
+    <section>
+      <div class="video-player">
+        <video aria-describedby="video-synopsis">
+          <source
+            src="http://publicdomainmovie.net/movie.php?id=BigBuckBunny_310&type=.mp4"
+            type="video/mp4"
+          />
+          <track
+            src="https://amara.org/en/subtitles/sbpf8fMnSckL/fr/3/download/Big%20Buck%20Bunny.fr.vtt"
+            kind="subtitles"
+            srclang="en"
+            label="English"
+          />
+          <p>
+            Message to display when video is not supported.
+          </p>
+        </video>
+        <div aria-hidden="true" class="captioning" role="status"></div>
+        <div class="controls" role="group">
+          <button
+            aria-label="Play"
+            aria-pressed="false"
+            class="play"
+            type="button"
+          >
+            <svg alt="" viewBox='0 0 90 90' role='presentation'>
+              <path class="off" d="M 20 10 L 70 45 L 20 80 Z"/>
+              <g class="on">
+                <rect height="70" width="20" x="20" y="10"></rect>
+                <rect height="70" width="20" x="50" y="10"></rect>
+              </g>
+            </svg>
+          </button>
+          <button
+            aria-label="Stop"
+            class="stop"
+            type="button"
+          >
+            <svg alt="" viewBox="0 0 90 90" role="presentation">
+              <rect height="40" width="40" x="25" y="25"></rect>
+            </svg>
+          </button>
+          <button
+            aria-label="Rewind"
+            class="rewind"
+            type="button"
+          >
+            <svg alt="" viewBox="0 0 90 90" role="presentation">
+              <path d="M 80 80 L 60 65 L 60 25 L 80 10 Z"/>
+              <path d="M 60 80 L 10 45 L 60 10 Z"/>
+            </svg>
+          </button>
+          <button
+            aria-label="Forward"
+            class="forward"
+            type="button"
+          >
+            <svg alt="" viewBox="0 0 90 90" role="presentation">
+              <path d="M 10 10 L 30 25 L 30 65 L 10 80 Z"/>
+              <path d="M 30 10 L 80 45 L 30 80 Z"/>
+            </svg>
+          </button>
+          <button
+            aria-controls="volume"
+            aria-expanded="false"
+            aria-label="Volume"
+            class="volume"
+            type="button"
+          >
+            <div class="slider vertical" id="volume" tabindex="-1">
+              <input id="vid-volume" type="hidden"/>
+              <div class="value"></div>
+              <div class="thumb"
+                aria-valuemax="10"
+                aria-valuemin="0"
+                aria-valuenow="0"
+                tabindex="-1"
+              ></div>
+            </div>
+            <svg alt="" viewBox="0 0 90 90" role="presentation">
+              <path d="M 9 25 L 25 25 L 41 13 L 41 69 L 25 57 L 9 57 Z"/>
+              <g class="on">
+                <path class="soft"
+                  d="M 49 33 C 52 38 52 44 49 49"
+                  style="fill: none; stroke-width: 0.5em;"/>
+                <path class="medium"
+                  d="M 57 25 C 65 34 65 48 57 57"
+                  style="fill: none; stroke-width: 0.5em;"/>
+                <path class="loud"
+                  d="M 65 17 C 72 23 76 32 76 41 C 76 50 72 59 65 65"
+                  style="fill: none; stroke-width: 0.5em;"/>
+              </g>
+              <path class="off"
+                d="M 81 26 L 51 56 M 51 26 L 81 56"
+                style="stroke-width: 0.5em;"/>
+            </svg>
+          </button>
+          <button
+            aria-label="Captions"
+            aria-pressed="false"
+            class="captions"
+            type="button"
+          >
+            <svg alt="" viewBox="0 0 90 90" role="presentation">
+              <path
+                d="M 10 10 L 80 10 L 80 50 L 60 50 L 35 80 L 40 50 L 10 50 Z"/>
+              <line
+                class="off"
+                x1="10" x2="80" y1="80" y2="10"
+                style="stroke-width: 0.5em;"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Size"
+            aria-pressed="false"
+            class="screen"
+            type="button"
+          >
+            <svg alt="" viewBox="0 0 90 90" role="presentation">
+              <path
+                class="off"
+                d="M 55 35 L 65 35 L 65 30 L 80 45 L 65 60 L 65 55 L 55 55 L 55
+                  65 L 60 65 L 45 80 L 30 65 L 35 65 L 35 55 L 25 55 L 25 60 L
+                  10 45 L 25 30 L 25 35 L 35 35 L 35 25 L 30 25 L 45 10 L 60 25
+                  L 55 25 Z"
+              />
+                <g class="on">
+                  <path
+                    d="M 15 80 L 7 73 L 23 56 L 15 49 L 40 46 L 37 71 L 30 63
+                      Z"/>
+                  <path
+                    d="M 63 30 L 71 37 L 46 40 L 49 15 L 56 23 L 73 7 L 80 15
+                      Z"/>
+                </g>
+              </svg>
+            </button>
+          </div>
+          <div class="clock">
+            <div class="elapsed"></div>
+            <div class="field">
+              <div class="slider" id="time" tabindex="0">
+                <input id="vid-timestepper" type="hidden"/>
+                <div class="value"></div>
+                <div class="thumb"
+                  aria-valuemax="10"
+                  aria-valuemin="0"
+                  aria-valuenow="0"
+                  tabindex="-1"
+                ></div>
+              </div>
+            </div>
+            <div class="duration"></div>
+          </div>
+        </div>
+      </div>
+      <p id="video-synopsis">
+      </p>
+    </section>
+    <script src="slider.js"></script>
+    <script src="video.js"></script>
+  </body>
+</html>

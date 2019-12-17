@@ -1,0 +1,130 @@
+.toolbar {
+  display: flex;
+}
+.toolbar > :not(:first-child):not(:last-child) {
+  padding: 0 1em;
+}
+.toolbar > :last-child {
+  padding-left: 1em;
+}
+.toolbar button,
+.toolbar select {
+  border-radius: 0.25em;
+  font-size: 1em;
+  line-height: 0;
+  min-height: 1.5em;
+  min-width: 1.5em;
+  position: relative;
+}
+.toolbar button[aria-pressed="true"] {
+  background-color: hsl(0, 0%, 90%);
+}
+.toolbar ol,
+.toolbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0.25em;
+}
+.toolbar [aria-pressed] + .submenu {
+  cursor: pointer;
+  position: absolute;
+  visibility: hidden;
+}
+.toolbar [aria-pressed="true"] + .submenu {
+  visibility: visible;
+}
+
+/* implementation specific */
+.toolbar {
+  background-color: hsl(204, 100%, 90%);
+  padding: 0.25em;
+}
+.toolbar > :not(:last-child) {
+  border-right: 0.125em solid hsl(0, 0%, 75%);
+  padding-right: 1em;
+}
+.toolbar button:not(.clicked):active::after,
+.toolbar button:not(.clicked):hover::after {
+  background-color: hsl(0, 0%, 95%);
+  border: 1px solid currentColor;
+  border-radius: 0.25em;
+  content: attr(aria-label) attr(title);
+  display: block;
+  font-size: 0.7em;
+  line-height: 1.5em;
+  margin: 10% 0 0 50%;
+  padding: 0.125em 0.25em;
+  position: absolute;
+  z-index: 1;
+}
+[value="align-center"]::before {
+  content: '┼';
+  font-weight: bold;
+}
+[value="align-justify"]::before {
+  content: '☰';
+  font-weight: bold;
+}
+[value="align-left"]::before {
+  content: '├';
+  font-weight: bold;
+  margin-left: -0.5em;
+}
+[value="align-right"]::before {
+  content: '┤';
+  font-weight: bold;
+  margin-right: -0.5em;
+}
+[value="bold"]::before {
+  content: 'B';
+  font-weight: bold;
+}
+[value="cut"]::after {
+  content: attr(aria-label);
+  display: block;
+}
+[value="italic"]::before {
+  content: 'i';
+  font-family: serif;
+  font-style: italic;
+  font-weight: bold;
+}
+[value="underline"]::before {
+  content: 'U';
+  font-weight: bold;
+  text-decoration: underline;
+}
+.font-menu {
+  display: flex;
+}
+.font-menu input {
+  flex-grow: 0;
+  height: 1.5em;
+  width: 2em;
+}
+.font-menu label {
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  position: absolute;
+}
+.font-menu ul {
+  border: 0.0625em solid hsl(204, 100%, 60%);
+  border-radius: 0.25em;
+  margin-top: 0.5em;
+}
+.font-menu ul::before {
+  border-bottom: 0.5em solid hsl(204, 100%, 60%);
+  border-left: 0.3em solid transparent;
+  border-right: 0.3em solid transparent;
+  content: ' ';
+  display: inline-block;
+  position: absolute;
+  margin-top: -0.5em;
+}
+.font-menu > :last-child {
+  margin-left: 0.5em;
+}
+.toolbar [id="font-family"] li > span {
+  font-size: 1rem;
+  line-height: 1rem;
+}

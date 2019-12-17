@@ -1,0 +1,23 @@
+.timer {
+  align-items: center;
+  border: 0.25rem solid hsl(204, 100%, 60%);
+  border-radius: 50%;
+  display: inline-flex;
+}
+.timer::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+.timer > time {
+  display: block;
+  font-family: monospace;
+  padding: 0.2em;
+}
+.timer .audio {
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  left: -200%;
+  overflow: hidden;
+  position: absolute;
+}

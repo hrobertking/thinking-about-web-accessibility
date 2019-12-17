@@ -1,0 +1,86 @@
+.toggle {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+.toggle .label + .switch,
+.toggle .label + .switch-label {
+  margin-left: 1em;
+}
+.toggle .switch + .label,
+.toggle .switch-label + .label {
+  margin-right: 1em;
+}
+.toggle .switch {
+  align-items: center;
+  background-color: hsl(204, 0%, 100%);
+  border: 0.0625em solid hsl(204, 0%, 0%);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.1em 0.1em hsl(204, 0%, 75%) inset;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 1.2em;
+  margin: 0 1em;
+  min-width: 2em;
+  padding: 0.0625em;
+  position: relative;
+}
+.toggle .switch-label + .switch {
+  margin: 0 1em;
+}
+.toggle input {
+  border: 0;
+  clip: rect(0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  left: -200%;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+}
+.toggle input:focus + .switch {
+  box-shadow: 0 0 0.1em 0.1em hsl(204, 0%, 100%),
+  0 0 0.2em 0.3em hsl(207, 80%, 70%);
+}
+.toggle .switch > .switch-label:first-of-type {
+  display: inline-block;
+  margin-right: 0.5em;
+  padding-left: 0.5em;
+}
+.toggle .switch > .switch-label:last-of-type {
+  display: inline-block;
+  margin-left: 0.5em;
+  padding-right: 0.5em;
+}
+.toggle .switch > .switch-button {
+  background-color: hsl(204, 0%, 60%);
+  border: 1px solid hsl(204, 0%, 30%);
+  border-radius: 0.2em;
+  box-shadow: 0.125em 0.25rem 1rem 0.1em hsl(204, 0%, 100%) inset;
+  display: inline-block;
+  height: 90%;
+  min-width: 1em;
+  position: absolute;
+  transition: left 1s;
+  width: 49%;
+}
+.toggle .switch > .switch-button::before {
+  content: unset;
+}
+.toggle input:not(:checked) + .switch > .switch-button {
+  left: 0;
+}
+.toggle input:checked + .switch > .switch-button {
+  left: 48%;
+}
+.toggle.no-labels .switch {
+  margin-right: 0;
+}
+.toggle.no-labels .switch-label {
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  height: 1px;
+  left: -200%;
+  position: absolute;
+  width: 1px;
+}

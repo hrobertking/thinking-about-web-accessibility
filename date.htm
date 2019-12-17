@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Date</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+      section {
+        margin-bottom: 1em;
+      }
+    </style>
+    <link href="field.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Date</h1>
+    <section>
+      <h2>Date Part Input</h2>
+      <fieldset>
+        <legend id="dob-label">Date of birth</legend>
+        <section role="group">
+          <span class="field">
+            <select aria-describedby="dob-label" id="dobDay">
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+            <span class="status"></span>
+            <label for="dobDay">Day</label>
+          </span>
+          <span class="field">
+            <select aria-describedby="dob-label" id="dobMonth">
+              <option>01</option>
+              <option>02</option>
+              <option>03</option>
+              <option>04</option>
+              <option>05</option>
+              <option>06</option>
+              <option>07</option>
+              <option>08</option>
+              <option>09</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+              <option>31</option>
+            </select>
+            <span class="status"></span>
+            <label for="dobMonth">Month</label>
+          </span>
+          <span class="field">
+            <input aria-describedby="dob-label" class="year" id="dobYear"
+             maxlength="4"
+             type="text"
+            />
+            <span class="status"></span>
+            <label for="dobYear">Year</label>
+          </span>
+        </section>
+      </fieldset>
+    </section>
+
+    <section>
+      <h2>Single Input</h2>
+      <span class="field date">
+        <label for="dob-single">
+          Date of birth
+          <span class="data-format">dd/mm/yyyy</span>
+        </label>
+        <input aria-describedby="dob-label"
+           data-format="mm/dd/yyyy" data-lang="de-DE" id="dob-single" type="text"
+        />
+        <span role="status"></span>
+        <span class="hint"></span>
+      </span>
+    </section>
+    <script src="date.js"></script>
+  </body>
+</html>

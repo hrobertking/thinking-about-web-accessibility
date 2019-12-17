@@ -1,0 +1,82 @@
+.journey {
+  counter-reset: journey;
+  display: flex;
+  list-style-type: none;
+}
+.journey > li {
+  align-items: center;
+  counter-increment: journey;
+  cursor: default;
+  display: flex;
+  line-height: 1.2em;
+}
+.journey > li > :first-child::after {
+  content: '\202f';
+  display: block;
+  width: 0.5em;
+}
+.journey > li > :first-child::before {
+  background-color: hsla(0, 0%, 100%, 1);
+  border-radius: 0.25em;
+  border: 0.125em solid currentColor;
+  color: hsla(204, 100%, 30%, 1);
+  content: counter(journey);
+  display: block;
+  font-size: inherit;
+  margin: 0 0.125em;
+  padding: 0 0.125em;
+  text-align: center;
+  width: 1em;
+}
+.journey > li[aria-current] a,
+.journey > li[aria-current] span {
+  background-color: hsla(204, 100%, 90%, 1);
+  color: hsla(0, 0%, 0%, 1);
+}
+.journey > li[aria-current] > :first-child::before {
+  color: hsla(0, 0%, 0%, 1);
+}
+.journey > li[aria-current] + li:not(:first-of-type)::before {
+  border-left-color: hsla(204, 100%, 90%, 1);
+}
+.journey > li.completed,
+.journey > li.completed a {
+  background-color: hsla(204, 100%, 30%, 1);
+  color: hsla(0, 0%, 100%, 1);
+}
+.journey > li.completed > :first-child::before {
+  color: hsla(204, 100%, 30%, 1);
+  content: '\2713';
+}
+.journey > li:last-of-type {
+  margin-right: 0;
+}
+.journey > li:not(:first-of-type)::before {
+  border-bottom: 0.7em solid transparent;
+  border-left: 1em solid hsla(204, 100%, 30%, 1);
+  border-top: 0.7em solid transparent;
+  content: "\202f";
+  display: inline-block;
+  font-size: inherit;
+  height: 0;
+  margin-right: 0.25em;
+  width: 0;
+}
+.journey > li:not(:first-of-type).completed:before {
+  border-color: hsla(204, 100%, 30%, 1);
+}
+.journey > li > :first-child {
+  align-items: center;
+  display: flex;
+  font-size: inherit;
+}
+
+.journey + [role="alert"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  left: -200%;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+}

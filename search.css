@@ -1,0 +1,20 @@
+.search [role="group"] input[type="text"] {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.search [role="group"] button {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-left: 0;
+  text-align: center;
+}
+.search [role="group"] button > svg {
+  display: block;
+  fill: transparent;
+  stroke: currentColor;
+  min-width: 1.2em;
+}
+.search .results:not(:empty) {
+  border-top: 0.125em solid hsl(204, 100%, 60%);
+  padding: 1em;
+}

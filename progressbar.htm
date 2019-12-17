@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>ProgressBar</title>
+    <meta charset="UTF-8">
+    <link href="progressbar.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>ProgressBar</h1>
+    <section>
+      <h2>ProgressBar as a bar</h2>
+      <div
+        class="progressbar"
+        aria-valuemax="200"
+        aria-valuemin="0"
+        aria-valuetext="14%"
+        id="progress"
+        role="progressbar"
+      >
+        <div class="indicator"></div>
+      </div>
+    </section>
+    <button aria-label="decrement" onclick="progress.value = Number(progress.text) - 1;">-</button>
+    <button aria-label="increment" onclick="progress.value = Number(progress.text) + 1;">+</button>
+
+    <section style="width:20em;">
+      <h2>ProgressBar as a circle</h2>
+      <svg
+        class="progressbar circle"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="50"
+        id="progresscircle"
+        role="progressbar"
+        viewBox="0 0 36 36"
+      >
+        <path
+          d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+          fill="none"
+          stroke-dasharray="100, 100"
+          stroke-linecap="round"
+          stroke-width="1"
+          stroke="hsl(204, 0%, 90%)"
+        >
+        </path>
+        <path
+          class="indicator"
+          d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+          fill="none"
+          stroke-dasharray="50, 100"
+          stroke-linecap="round"
+          stroke-width="1"
+          stroke="hsl(204, 100%, 60%)"
+        >
+        </path>
+      </svg>
+    </section>
+    <button aria-label="decrement" onclick="progresscircle.value = Number(progresscircle.text) - 1;">-</button>
+    <button aria-label="increment" onclick="progresscircle.value = Number(progresscircle.text) + 1;">+</button>
+
+    <script src="progressbar.js"></script>
+  </body>
+</html>

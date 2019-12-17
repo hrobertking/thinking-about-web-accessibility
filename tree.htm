@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Tree</title>
+    <meta charset="UTF-8">
+    <link href="tree.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Tree</h1>
+    <ul class="tree" role="tree">
+      <li id="account profile" role="treeitem">
+        <span>Account Profile</span>
+        <ul role="group">
+          <li id="contact information" role="treeitem">
+            <span id="contact-info">Contact Information</span>
+    
+            <ul role="group">
+              <li id="addresses" role="treeitem">
+                <span id="addresses">Addresses</span>
+                <ul aria-labelledby="addresses" role="group">
+                  <li class="p-adr" id="addresses-work" role="treeitem">
+                    <span>Work</span>
+                    <div>
+                      <div class="p-org">My Company</div>
+                      <div class="p-street-address">123 Any St</div>
+                      <span class="p-locality">Anytown</span>
+                      <span class="p-region">AZ</span>
+                      <span class="p-postal-code">85999</span>
+                    </div>
+                  </li>
+                  <li class="p-adr" id="addresses-home" role="treeitem">
+                    <span>Home</span>
+                    <div>
+                      <div class="p-street-address">999 E Notalane Rd</div>
+                      <span class="p-locality">Anytown</span>
+                      <span class="p-region">AZ</span>
+                      <span class="p-postal-code">85999</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li id="email" role="treeitem">
+                <span id="emailaddresses">Email</span>
+                <ul aria-labelledby="emailaddresses" role="group">
+                  <li id="email-work" role="treeitem">
+                    <span>Work</span>
+                    <div>
+                      noname-work@mailinator.com
+                    </div>
+                  </li>
+                  <li id="email-personal" role="treeitem">
+                    <span>Personal</span>
+                    <div>
+                      noname-personal@mailinator.com
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li id="telephone" role="treeitem">
+                <span id="phones">Telephone</span>
+                <ul aria-labelledby="phones" role="group">
+                  <li id="telephone-work" role="treeitem">
+                    <span>Work</span>
+                    <div>
+                      (999) 555-1212
+                    </div>
+                  </li>
+                  <li id="telephone-personal" role="treeitem">
+                    <span>Personal</span>
+                    <div>
+                      (602) 555-1212
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li id="balances" role="treeitem">
+            <span id="balances">Balances</span>
+            <table>
+              <thead>
+                <tr>
+                  <th>Account</th>
+                  <th>Description</th>
+                  <th>Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PayPal</td>
+                  <td>USD</td>
+                  <td>100.00</td>
+                </tr>
+                <tr>
+                  <td>PayPal</td>
+                  <td>EUR</td>
+                  <td>999.99</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <script src="tree.js"></script>
+  </body>
+</html>

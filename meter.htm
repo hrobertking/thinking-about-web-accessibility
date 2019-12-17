@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Meter</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+      .clipped {
+        clip: rect(0, 0, 0, 0);
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+        left: -200%;
+        position: absolute;
+      }
+    </style>
+    <link href="meter.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Meter</h1>
+    <section>
+      <h2 id="last-payment-age">
+        <span id="period">Days</span> since last payment
+      </h2>
+      <ol aria-labelledby="last-payment-age" class="meter">
+        <li data-max="30"></li>
+        <li data-max="60" data-min="31">
+          <span aria-describedby="period">45</span>
+        </li>
+        <li data-max="90" data-min="61"></li>
+        <li data-min="91"></li>
+      </ol>
+    </section>
+    <script src="meter.js"></script>
+  </body>
+</html>

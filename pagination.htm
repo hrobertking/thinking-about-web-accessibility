@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Pagination</title>
+    <meta charset="UTF-8">
+    <link href="pagination.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Pagination</h1>
+    <section>
+      <h2>HTML for a Navigational List</h2>
+      <ol aria-label="pages" class="pagination" role="navigation">
+        <li>
+          <a href="/page1">1</a>
+        </li>
+        <li aria-current="page">
+          <a href="/page2">2</a>
+        </li>
+        <li>
+          <a href="/page3">3</a>
+        </li>
+        <li>
+          <a href="/page4">4</a>
+        </li>
+        <li>
+          <a href="/page5">5</a>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>HTML for a Button Group</h2>
+      <ol aria-label="pages" class="pagination" role="group">
+        <li>
+          <button type="button">1</button>
+        </li>
+        <li aria-current="page">
+          <button type="button">2</button>
+        </li>
+        <li>
+          <button type="button">3</button>
+        </li>
+        <li>
+          <button type="button">4</button>
+        </li>
+        <li>
+          <button type="button">5</button>
+        </li>
+      </ol>
+    </section>
+    <script src="pagination.js"></script>
+  </body>
+</html>

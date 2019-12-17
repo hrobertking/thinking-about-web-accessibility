@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Tabs Widget</title>
+    <meta charset="UTF-8">
+    <link href="tabs-widget.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Tabs Widget</h1>
+    <section class="tabs-widget" id="mytabs">
+      <ul div aria-label="Components" role="tablist">
+        <li role="presentation">
+          <button aria-controls="mc-panel1" id="mc-tab1"
+            role="tab" type="button"
+          >
+            Accordion
+          </button>
+        </li>
+        <li role="presentation">
+          <button id="mc-tab2"
+            role="tab" type="button"
+          >
+            Alert
+          </button>
+        </li>
+        <li role="presentation">
+          <button aria-controls="mc-panel3" id="mc-tab3"
+            role="tab" type="button"
+          >
+            Carousel
+          </button>
+        </li>
+      </ul>
+      <ul class="panels">
+        <li aria-labelledby="mc-tab1" id="mc-panel1" role="tabpanel">
+          <p>
+            An <code>Accordion</code> is a widget that expands and collapses
+            when the <em>twistie</em> (control) is activated. In some
+            browsers, this widget can be built using the <code>summary</code>
+            and <code>details</code> elements; however, not all browsers
+            implement the expand and collapse feature - notably, Microsoft's
+            Internet Explorer and Edge browsers are in this category.
+          </p>
+        </li>
+        <li aria-labelledby="mc-tab2" id="mc-panel2" role="tabpanel">
+          <p>
+            There are two types of <code>Alert</code>. One, a simple
+            <code>Alert</code>, is a message displayed (and announced) to the
+            user within a browser window. The other, an
+            <code>AlertDialog</code>, is a message displayed (and announced)
+            to the user within a modal (<code>Dialog</code>) window. Where an
+            <code>Alert</code> is straightforward and requires little in the
+            way of markup and no special styling, an <code>AlertDialog</code>
+            – because it is an implementation of a <a
+            href="Dialog.md"><code>Dialog</code></a> – requires more markup,
+            special styling, and JavaScript as well.
+          </p>
+        </li>
+        <li aria-labelledby="mc-tab3" id="mc-panel3" role="tabpanel">
+          <p>
+            A <code>Carousel</code> is a component used to show a series of
+            content blocks and allow either animation of the transition or
+            user control of the transition. Although there is plenty of debate
+            about whether or not they are useful or desireable, they are
+            relatively popular for a number of implementations. A large part
+            of the reason most haters hate them is because they're seldom
+            built with accessibility in mind. The fact remains, however, they
+            are a consistent design pattern, so it behooves us to make them
+            accessible.
+          </p>
+          <p>
+            In order to be accessible, there are a few requirements we must
+            keep in mind.
+          </p>
+     
+          <ul>
+            <li>The user is able to start, stop, and pause the animation.</li>
+            <li>The contol of the displayed panel is indicated both visually
+              and programmatically.</li>
+            <li>All controls have text labels, not just an icon that we hope
+              will be understood.</li>
+            <li>All controls have ample <em>target area</em>.</li>
+          </ul>
+          <p>
+            Semantically, a <code>Carousel</code> is a collection of
+            <code>Tab</code> components, even though the design is a little
+            different.
+          </p>
+        </li>
+      </ul>
+    </section>
+    <script src="tabs-widget.js"></script>
+  </body>
+</html>

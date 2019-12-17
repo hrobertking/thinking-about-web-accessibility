@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Autocomplete</title>
+    <meta charset="UTF-8">
+    <link href="autocomplete.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Autocomplete</h1>
+    <span class="field">
+      <label for="myautocomplete" id="myautocomplete-label">
+        Favorite Fruit
+      </label>
+      <span class="autocomplete">
+        <span
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="myautocomplete-list"
+          id="myautocomplete-combo"
+          role="combobox"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="myautocomplete-list"
+            autocomplete="off"
+            id="myautocomplete"
+            type="text"
+          >
+        </span>
+        <ol
+          aria-labelledby="myautocomplete-label"
+          id="myautocomplete-list"
+          role="listbox"
+          tabindex="-1"
+        >
+          <li role="option" id="apple">Apple</li>
+          <li role="option" id="apricot">Apricot</li>
+          <li role="option" id="banana">Banana</li>
+          <li role="option" id="cherry">Cherry</li>
+          <li role="option" id="date">Date</li>
+        </ol>
+        <span class="listlength" role="status"></span>
+      </span>
+    </span>
+    <script src="autocomplete.js"></script>
+  </body>
+</html>

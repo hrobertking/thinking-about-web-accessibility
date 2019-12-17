@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Timer</title>
+    <meta charset="UTF-8">
+    <link href="timer.css" rel="stylesheet" />
+    <style type="text/css">
+      .timer.expired {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Timer</h1>
+    <section>
+      <h2>HTML for a Counting Timer</h2>
+      <p>The elapsed time is set to 1:00, showing 1:00 has already passed.</p>
+      <h3 id="elapsed">Elapsed Time</h3>
+      <div aria-labelledby="elapsed" class="timer" id="elapsed-timer">
+        <time class="elapsed">01:00</time>
+        <time class="remaining">00:00</time>
+      </div>
+      <button type="button" onclick="window['elapsed-timer'].start();">
+        Start Countdown
+      </button>
+      <button type="button" onclick="window['elapsed-timer'].stop();">
+        Stop Countdown
+      </button>
+    </section>
+
+    <section>
+      <h2>HTML for a Countdown Timer</h2>
+      <h3 id="countdown-label">Countdown Clock</h3>
+      <div aria-labelledby="countdown-label" class="timer" id="time-remaining">
+        <time class="elapsed" data-format="00:00:00">00:00</time>
+        <time class="remaining" data-format="00:00:00">1:00:00</time>
+      </div>
+      <button type="button" onclick="window['time-remaining'].start();">
+        Start Countdown
+      </button>
+      <button type="button" onclick="window['time-remaining'].stop();">
+        Stop Countdown
+      </button>
+    </section>
+
+    <section>
+      <h2>HTML for a Dual-purpose Timer</h2>
+      <h3 id="dpt">Elapsed Time</h3>
+      <div aria-labelledby="dpt" class="timer" id="csr-elapsed">
+        <time class="elapsed">00:00</time>
+        <time class="remaining">01:30</time>
+      </div>
+      <button type="button" onclick="window['csr-elapsed'].start();">
+        Start Timer
+      </button>
+      <button type="button" onclick="window['csr-elapsed'].stop();">
+        Stop Timer
+      </button>
+    </section>
+    <script src="timer.js"></script>
+    <script>
+      var expiresTimer = window['time-remaining'];
+
+      expiresTimer.addEventListener('expired', function () {
+        expiresTimer.className = [expiresTimer.className, 'expired'].join(' ');
+      });
+    </script>
+  </body>
+</html>

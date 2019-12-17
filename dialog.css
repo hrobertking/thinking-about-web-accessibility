@@ -1,0 +1,35 @@
+.dialog {
+  align-items: center;
+  background: hsla(204, 0%, 80%, 0.7);
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999; /* this _must_ be the highest z-index used */
+}
+.dialog > section {
+  background-color: hsl(204, 0%, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  width: 50%;
+}
+.dialog > section > header {
+  align-items: center;
+  display: flex;
+}
+.dialog > section > header > h2 {
+  flex: 1;
+}
+.dialog > section > header > button {
+  background-color: transparent;
+  border-radius: 50%;
+  color: hsl(204, 0%, 0%);
+  font-size: 1.5rem;
+  height: 2rem;
+  line-height: 0;
+  text-align: center;
+  width: 2rem;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Alert Dialog</title>
+    <meta charset="UTF-8">
+    <link href="alertdialog.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Alert Dialog</h1>
+    <button type="button" onclick="alertdialog.open()">Open AlertDialog</button>
+    <div class="overlay" id="alertdialog">
+      <section
+        aria-describedby="alertdialog-content"
+        aria-labelledby="alertdialog-header"
+        class="alertdialog"
+        role="alertdialog"
+        tabindex="-1"
+      >
+        <header>
+          <h2 id="alertdialog-header">System notice</h2>
+          <button aria-label="Close" class="close" type="button">✕</button>
+        </header>
+        <section id="alertdialog-content">
+          <p>
+            System shutdown will begin in 20 minutes.
+          </p>
+        </section>
+      </section>
+    </div>
+    <script src="alertdialog.js"></script>
+  </body>
+</html>

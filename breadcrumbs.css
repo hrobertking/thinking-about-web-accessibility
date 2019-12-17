@@ -1,0 +1,27 @@
+.breadcrumb {
+  display: inline-flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb > li {
+  align-items: center;
+  cursor: default;
+  display: inline-flex;
+  line-height: 1.2em;
+}
+.breadcrumb > li:not(:first-of-type)::before {
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.5em solid hsl(204, 100%, 60%);
+  border-top: 0.3em solid transparent;
+  content: "\202f";
+  display: inline-block;
+  flex-shrink: 0;
+  font-size: inherit;
+  height: 0;
+  margin: 0 0.25em;
+  width: 0;
+}
+.breadcrumb > li:last-of-type {
+  margin-right: 0;
+}

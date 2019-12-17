@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>ComboBox</title>
+    <meta charset="UTF-8">
+    <link href="field.css" rel="stylesheet" />
+    <link href="combobox.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>ComboBox</h1>
+    <span class="field">
+      <label for="mycombobox" id="mycombobox-label">
+        Side item
+      </label>
+      <span class="combobox">
+        <span role="group">
+          <input
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="mycombobox-list"
+            autocomplete="off"
+            id="mycombobox"
+            role="combobox"
+            type="text"
+          >
+          <span class="listlength" role="status"></span>
+          <button
+            aria-label="show fruit options"
+            tabindex="-1"
+            type="button"
+          >
+            ▼
+          </button>
+        </span>
+        <ol
+          aria-labelledby="mycombobox-label"
+          id="mycombobox-list"
+          role="listbox"
+          tabindex="-1"
+        >
+          <li role="option" id="apple">Apple</li>
+          <li role="option" id="apricot">Apricot</li>
+          <li role="option" id="banana">Banana</li>
+          <li aria-selected="true" role="option" id="cherry">Cherry</li>
+          <li role="option" id="date">Date</li>
+          <li role="option" id="nonsense">
+            Supercalifragilisticexpialodocius
+          </li>
+        </ol>
+      </span>
+    </span>
+    <script src="combobox.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Flyout</title>
+    <meta charset="UTF-8">
+    <link href="field.css" rel="stylesheet" />
+    <link href="checkbox.css" rel="stylesheet" />
+    <link href="flyout.css" rel="stylesheet" />
+    <style type="text/css">
+      fieldset {
+        border: 0;
+        margin: 1em;
+        padding: 0;
+      }
+      div:not(:last-of-type) {
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flyout</h1>
+    <div>
+      <button
+        aria-controls="fruit-group"
+        aria-describedby="group-label"
+        aria-expanded="false"
+        class="flyout"
+        type="button"
+      >
+        Fruits
+      </button>
+      <section
+        aria-hidden="true"
+        aria-labelledby="group-label"
+        aria-live="polite"
+        class="flyout-content checkbox"
+        id="fruit-group"
+        role="status"
+      >
+        <fieldset class="checkbox">
+          <legend id="group-label">Fruits I like to eat</legend>
+          <p>
+            Please select all the fruits you like to eat.
+          </p>
+          <span class="field">
+            <input aria-describedby="group-label" id="group-apple" type="checkbox" />
+            <span>
+              <label for="group-apple">Apple</label>
+            </span>
+          </span>
+          <span class="field">
+            <input aria-describedby="group-label" id="group-banana" type="checkbox" />
+            <span>
+              <label for="group-banana">Banana</label>
+            </span>
+          </span>
+          <span class="field">
+            <input aria-describedby="group-label" id="group-cherry" type="checkbox" />
+            <span>
+              <label for="group-cherry">Cherry</label>
+            </span>
+          </span>
+          <span class="field">
+            <input aria-describedby="group-label" id="group-date" type="checkbox" />
+            <span>
+              <label for="group-date">Date</label>
+            </span>
+          </span>
+        </fieldset>
+      </section>
+    </div>
+
+    <div>
+      <h2>Supplemental Example</h2>
+      <div>
+        <button
+          aria-controls="supplemental-fruit-group"
+          aria-describedby="tri-label"
+          aria-expanded="false"
+          class="flyout"
+          type="button"
+        >
+          Fruits
+        </button>
+        <section
+          aria-hidden="true"
+          aria-labelledby="tri-label"
+          aria-live="polite"
+          class="flyout-content checkbox"
+          id="supplemental-fruit-group"
+          role="status"
+        >
+          <h3>Group with Tri-state Indicator</h3>
+          <fieldset class="checkbox tristate">
+            <legend id="tri-label">
+              <span class="field">
+                <input id="tri-grp" type="checkbox" />
+                <span>
+                  <label for="tri-grp">Fruits I like to eat</label>
+                </span>
+              </span>
+            </legend>
+            <p>
+              Please select all the fruits you like to eat.
+            </p>
+            <span class="field">
+              <input aria-describedby="tri-label" id="tri-apple" type="checkbox" />
+              <span>
+                <label for="tri-apple">Apple</label>
+              </span>
+            </span>
+            <span class="field">
+              <input aria-describedby="tri-label" id="tri-banana" type="checkbox" />
+              <span>
+                <label for="tri-banana">Banana</label>
+              </span>
+            </span>
+            <span class="field">
+              <input aria-describedby="tri-label" id="tri-cherry" type="checkbox" />
+              <span>
+                <label for="tri-cherry">Cherry</label>
+              </span>
+            </span>
+            <span class="field">
+              <input aria-describedby="tri-label" id="tri-date" type="checkbox" />
+              <span>
+                <label for="tri-date">Date</label>
+              </span>
+            </span>
+          </fieldset>
+        </section>
+      </div>
+    </div>
+
+    <script src="checkbox.js"></script>
+    <script src="flyout.js"></script>
+  </body>
+</html>

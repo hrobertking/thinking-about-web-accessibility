@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Button (Request)</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+      section {
+        margin-bottom: 1em;
+      }
+    </style>
+    <link href="field.css" rel="stylesheet" />
+    <link href="button-request.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Button</h1>
+    <section>
+      <h2>Default</h2>
+      <button
+        aria-busy=""
+        aria-labelledby="button-label"
+        class="request"
+        data-oncomplete="Data received"
+        data-onfail="Request failed"
+        data-url="http://example.com/movies.json"
+        type="button"
+      >
+        <span id="button-label">Request Data</span>
+        <span role="presentation"></span>
+      </button>
+      <span role="status"></span>
+    </section>
+    <section>
+      <h2>Busy</h2>
+      <button
+        aria-busy="true"
+        aria-labelledby="button-label"
+        class="request"
+        data-oncomplete="Data received"
+        data-onfail="Request failed"
+        data-url="http://example.com/movies.json"
+        type="button"
+      >
+        <span id="button-label">Request Data</span>
+        <span role="presentation"></span>
+      </button>
+      <span role="status"></span>
+    </section>
+    <script src="button-request.js"></script>
+  </body>
+</html>

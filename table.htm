@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Table</title>
+    <meta charset="UTF-8">
+    <link href="table.css" rel="stylesheet" />
+    <style type="text/css">
+      section:not(:last-of-type) {
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Table</h1>
+    <section>
+      <h2>A simple table</h2>
+      <table
+        aria-describedby="table-status"
+        aria-labelledby="table-caption"
+        class="banded borderless"
+      >
+        <caption id="table-caption">10 Busiest Airports</caption>
+        <thead>
+          <tr role="row">
+            <th aria-sort="none" role="columnheader" scope="col">
+              Airport Name
+            </th>
+            <th aria-sort="none" role="columnheader" scope="col">
+              Airport Code
+            </th>
+            <th aria-sort="none" role="columnheader" scope="col">
+              Country
+            </th>
+            <th aria-sort="none" role="columnheader" scope="col">
+              Passengers
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr role="row">
+            <td>Hartsfield-Jackson Atlanta International Airport</td>
+            <td>ATL</td>
+            <td>US</td>
+            <td>104,000,000</td>
+          </tr>
+          <tr role="row">
+            <td>Beijing Capital International Airport</td>
+            <td>PEK</td>
+            <td>CN</td>
+            <td>96,000,000</td>
+          </tr>
+          <tr role="row">
+            <td>Dubai International Airport</td>
+            <td>DXB</td>
+            <td>AE</td>
+            <td>88,000,000</td>
+          </tr>
+          <tr role="row">
+            <td>Los Angeles International Airport</td>
+            <td>LAX</td>
+            <td>US</td>
+            <td>84,600,000</td>
+          </tr>
+          <tr role="row">
+            <td>Tokyo Haneda International Airport</td>
+            <td>HND</td>
+            <td>JP</td>
+            <td>85,000,000</td>
+          </tr>
+          <tr role="row">
+            <td>Chicago O'Hare International Airport</td>
+            <td>ORD</td>
+            <td>US</td>
+            <td>80,000,000</td>
+          </tr>
+          <tr role="row">
+            <td>London Heathrow Airport</td>
+            <td>LHR</td>
+            <td>GB</td>
+            <td>78,000,000</td>
+          </tr>
+          <tr role="row">
+            <td>Hong Kong International Airport</td>
+            <td>HKG</td>
+            <td>CN</td>
+            <td>73,000,000</td>
+          </tr>
+          <tr role="row">
+            <td>Shanghai Pudong International Airport</td>
+            <td>PVG</td>
+            <td>CN</td>
+            <td>70,000,000</td>
+          </tr>
+          <tr role="row">
+            <td>Aéroport de Paris-Charles de Gaulle</td>
+            <td>CDG</td>
+            <td>FR</td>
+            <td>69,000,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <div aria-live="polite" id="table-status" role="status"></div>
+    </section>
+    <section>
+      <h2>Table with Complex Multi-level Headers</h2>
+      <table
+        aria-describedby="table-rg-status"
+        aria-labelledby="table-rg-caption"
+      >
+        <caption id="table-rg-caption">10 Busiest Airports</caption>
+        <thead>
+          <tr role="row">
+            <th id="name" role="columnheader" scope="col">
+              Airport Name
+            </th>
+            <th id="code" role="columnheader" scope="col">
+              Airport Code
+            </th>
+            <th id="country" role="columnheader" scope="col">
+              Country
+            </th>
+            <th id="passengers" role="columnheader" scope="col">
+              Passengers
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr role="row">
+            <th class="rowgroup" colspan="4" id="tbl-rg-grp-d" scope="colgroup">
+              Domestic
+            </th>
+          </tr>
+          <tr role="row">
+            <th id="ATL" role="rowheader" scope="row">
+              Hartsfield-Jackson Atlanta International Airport
+            </th>
+            <td headers="tbl-rg-grp-d ATL code">ATL</td>
+            <td headers="tbl-rg-grp-d ATL country">US</td>
+            <td headers="tbl-rg-grp-d ATL passengers">104,000,000</td>
+          </tr>
+          <tr role="row">
+            <th id="LAX" role="rowheader" scope="row">
+              Los Angeles International Airport
+            </th>
+            <td headers="tbl-rg-grp-d code">LAX</td>
+            <td headers="tbl-rg-grp-d country">US</td>
+            <td headers="tbl-rg-grp-d passengers">84,600,000</td>
+          </tr>
+          <tr role="row">
+            <th id="ORD" role="rowheader" scope="row">
+              Chicago O'Hare International Airport
+            </th>
+            <td headers="tbl-rg-grp-d code">ORD</td>
+            <td headers="tbl-rg-grp-d country">US</td>
+            <td headers="tbl-rg-grp-d passengers">80,000,000</td>
+          </tr>
+          <tr role="row">
+            <th
+              class="rowgroup"
+              colspan="4"
+              id="tbl-rg-grp-i"
+              scope="colgroup"
+            >
+              International
+            </th>
+          </tr>
+          <tr role="row">
+            <th id="PEK" role="rowheader" scope="row">
+              Beijing Capital International Airport
+            </th>
+            <td headers="tbl-rg-grp-i PEK code">PEK </td>
+            <td headers="tbl-rg-grp-i PEK country">CN</td>
+            <td headers="tbl-rg-grp-i PEK passengers">96,000,000</td>
+          </tr>
+          <tr role="row">
+            <th id="DXB" role="rowheader" scope="row">
+              Dubai International Airport
+            </th>
+            <td headers="tbl-rg-grp-i DXB code">DXB</td>
+            <td headers="tbl-rg-grp-i DXB country">AE</td>
+            <td headers="tbl-rg-grp-i DXB passengers">88,000,000</td>
+          </tr>
+          <tr role="row">
+            <th id="HND" role="rowheader" scope="row">
+              Tokyo Haneda International Airport
+            </th>
+            <td headers="tbl-rg-grp-i HND code">HND</td>
+            <td headers="tbl-rg-grp-i HND country">JP</td>
+            <td headers="tbl-rg-grp-i HND passengers">85,000,000</td>
+          </tr>
+          <tr role="row">
+            <th id="LHR" role="rowheader" scope="row">
+              London Heathrow Airport
+            </th>
+            <td headers="tbl-rg-grp-i LHR code">LHR</td>
+            <td headers="tbl-rg-grp-i LHR country">GB</td>
+            <td headers="tbl-rg-grp-i LHR passengers">78,000,000</td>
+          </tr>
+          <tr role="row">
+            <th id="HKG" role="rowheader" scope="row">
+              Hong Kong International Airport
+            </th>
+            <td headers="tbl-rg-grp-i HKG code">HKG</td>
+            <td headers="tbl-rg-grp-i HKG country">CN</td>
+            <td headers="tbl-rg-grp-i HKG passengers">73,000,000</td>
+          </tr>
+          <tr role="row">
+            <th id="PVG" role="rowheader" scope="row">
+              Shanghai Pudong International Airport
+            </th>
+            <td headers="tbl-rg-grp-i PVG code">PVG</td>
+            <td headers="tbl-rg-grp-i PVG country">CN</td>
+            <td headers="tbl-rg-grp-i PVG passengers">70,000,000</td>
+          </tr>
+          <tr role="row">
+            <th id="CDG" role="rowheader" scope="row">
+              Aéroport de Paris-Charles de Gaulle
+            </th>
+            <td headers="tbl-rg-grp-i CDG code">CDG</td>
+            <td headers="tbl-rg-grp-i CDG country">FR</td>
+            <td headers="tbl-rg-grp-i CDG passengers">69,000,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <div aria-live="polite" id="table-rg-status" role="status"></div>
+    </section>
+    <section>
+      <h2>Table with Complex Groups</h2>
+      <table
+        aria-describedby="table-rg-cg-status"
+        aria-labelledby="table-rg-cg-caption"
+        style="width: 60%"
+      >
+        <caption id="table-rg-cg-caption">Sales</caption>
+        <col> <!-- region -->
+        <colgroup span="3"></colgroup> <!-- q1 -->
+        <colgroup span="3"></colgroup> <!-- q2 -->
+        <thead>
+          <tr role="row">
+            <th id="region" role="columnheader" rowspan="2" scope="col"
+              style="width: 30%"
+            >
+              Region
+            </th>
+            <th colspan="3" id="q1" scope="colgroup">
+              Q1
+            </th>
+            <th colspan="3" id="q2" scope="colgroup">
+              Q2
+            </th>
+          </tr>
+          <tr role="row">
+            <th id="jan" role="columnheader" scope="col">
+              January
+            </th>
+            <th id="feb" role="columnheader" scope="col">
+              February
+            </th>
+            <th id="mar" role="columnheader" scope="col">
+              March
+            </th>
+            <th id="apr" role="columnheader" scope="col">
+              April
+            </th>
+            <th id="may" role="columnheader" scope="col">
+              May
+            </th>
+            <th id="jun" role="columnheader" scope="col">
+              June
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr role="row">
+            <th class="rowgroup" colspan="7" id="tbl-rg-grp-a" scope="colgroup">
+              Product A
+            </th>
+          </tr>
+          <tr role="row">
+            <th id="pda-north" role="rowheader" scope="row">
+              North
+            </th>
+            <td class="num" headers="tbl-rg-grp-a pda-north q1 jan">345</td>
+            <td class="num" headers="tbl-rg-grp-a pda-north q1 feb">370</td>
+            <td class="num" headers="tbl-rg-grp-a pda-north q1 mar">370</td>
+            <td class="num" headers="tbl-rg-grp-a pda-north q2 apr">345</td>
+            <td class="num" headers="tbl-rg-grp-a pda-north q2 may">370</td>
+            <td class="num" headers="tbl-rg-grp-a pda-north q2 jun">354</td>
+          </tr>
+          <tr role="row">
+            <th id="pda-east" role="rowheader" scope="row">
+              East
+            </th>
+            <td class="num" headers="tbl-rg-grp-a pda-east q1 jan">245</td>
+            <td class="num" headers="tbl-rg-grp-a pda-east q1 feb">320</td>
+            <td class="num" headers="tbl-rg-grp-a pda-east q1 mar">270</td>
+            <td class="num" headers="tbl-rg-grp-a pda-east q2 apr">288</td>
+            <td class="num" headers="tbl-rg-grp-a pda-east q2 may">325</td>
+            <td class="num" headers="tbl-rg-grp-a pda-east q2 jun">204</td>
+          </tr>
+          <tr role="row">
+            <th id="pda-south" role="rowheader" scope="row">
+              South
+            </th>
+            <td class="num" headers="tbl-rg-grp-a pda-south q1 jan">222</td>
+            <td class="num" headers="tbl-rg-grp-a pda-south q1 feb">297</td>
+            <td class="num" headers="tbl-rg-grp-a pda-south q1 mar">255</td>
+            <td class="num" headers="tbl-rg-grp-a pda-south q2 apr">325</td>
+            <td class="num" headers="tbl-rg-grp-a pda-south q2 may">226</td>
+            <td class="num" headers="tbl-rg-grp-a pda-south q2 jun">250</td>
+          </tr>
+          <tr role="row">
+            <th id="pda-west" role="rowheader" scope="row">
+              West
+            </th>
+            <td class="num" headers="tbl-rg-grp-a pda-west q1 jan">145</td>
+            <td class="num" headers="tbl-rg-grp-a pda-west q1 feb">220</td>
+            <td class="num" headers="tbl-rg-grp-a pda-west q1 mar">170</td>
+            <td class="num" headers="tbl-rg-grp-a pda-west q2 apr">188</td>
+            <td class="num" headers="tbl-rg-grp-a pda-west q2 may">225</td>
+            <td class="num" headers="tbl-rg-grp-a pda-west q2 jun">114</td>
+          </tr>
+          <tr role="row">
+            <th class="rowgroup" colspan="7" id="tbl-rg-grp-b" scope="colgroup">
+              Product B
+            </th>
+          </tr>
+          <tr role="row">
+            <th id="pdb-north" role="rowheader" scope="row">
+              North
+            </th>
+            <td class="num" headers="tbl-rg-grp-b pdb-north q1 jan">145</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-north q1 feb">170</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-north q1 mar">170</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-north q2 apr">145</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-north q2 may">170</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-north q2 jun">154</td>
+          </tr>
+          <tr role="row">
+            <th id="pdb-east" role="rowheader" scope="row">
+              East
+            </th>
+            <td class="num" headers="tbl-rg-grp-b pdb-east q1 jan">145</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-east q1 feb">120</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-east q1 mar">170</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-east q2 apr">188</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-east q2 may">125</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-east q2 jun">104</td>
+          </tr>
+          <tr role="row">
+            <th id="pdb-south" role="rowheader" scope="row">
+              South
+            </th>
+            <td class="num" headers="tbl-rg-grp-b pdb-south q1 jan">122</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-south q1 feb">197</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-south q1 mar">155</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-south q2 apr">125</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-south q2 may">126</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-south q2 jun">150</td>
+          </tr>
+          <tr role="row">
+            <th id="pdb-west" role="rowheader" scope="row">
+              West
+            </th>
+            <td class="num" headers="tbl-rg-grp-b pdb-west q1 jan">145</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-west q1 feb">120</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-west q1 mar">170</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-west q2 apr">188</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-west q2 may">125</td>
+            <td class="num" headers="tbl-rg-grp-b pdb-west q2 jun">114</td>
+          </tr>
+        </tbody>
+      </table>
+      <div aria-live="polite" id="table-rg-cg-status" role="status"></div>
+    </section>
+    <section>
+      <h2>Table with multi-level headers, column groups, and form elements</h2>
+      <table
+        aria-describedby="table-rg-cg-status"
+        aria-labelledby="table-rg-cg-caption"
+        style="width: 60%"
+      >
+        <caption id="table-rg-cg-caption">Sales</caption>
+        <col> <!-- region -->
+        <colgroup span="3"></colgroup> <!-- q1 -->
+        <colgroup span="3"></colgroup> <!-- q2 -->
+        <thead>
+          <tr role="row">
+            <th id="region" role="columnheader" rowspan="2" scope="col"
+              style="width: 30%"
+            >
+              Region
+            </th>
+            <th colspan="3" id="q1" scope="colgroup">
+              Q1
+            </th>
+            <th colspan="3" id="q2" scope="colgroup">
+              Q2
+            </th>
+          </tr>
+          <tr role="row">
+            <th id="jan" role="columnheader" scope="col">
+              January
+            </th>
+            <th id="feb" role="columnheader" scope="col">
+              February
+            </th>
+            <th id="mar" role="columnheader" scope="col">
+              March
+            </th>
+            <th id="apr" role="columnheader" scope="col">
+              April
+            </th>
+            <th id="may" role="columnheader" scope="col">
+              May
+            </th>
+            <th id="jun" role="columnheader" scope="col">
+              June
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr role="row">
+            <th class="rowgroup" colspan="7" id="tbl-cgi-A" scope="colgroup">
+              Product A
+            </th>
+          </tr>
+          <tr role="row">
+            <th id="pda-N" role="rowheader" scope="row">
+              North
+            </th>
+            <td class="num" headers="tbl-cgi-A pda-N q1 jan">345</td>
+            <td class="num" headers="tbl-cgi-A pda-N q1 feb">370</td>
+            <td class="num" headers="tbl-cgi-A pda-N q1 mar">370</td>
+            <td class="num" headers="tbl-cgi-A pda-N q2 apr">345</td>
+            <td class="num" headers="tbl-cgi-A pda-N q2 may">370</td>
+            <td class="input">
+              <input aria-labelledby="tbl-cgi-A pda-N q2 jun" name="pda-N-jun"/>
+            </td>
+          </tr>
+          <tr role="row">
+            <th id="pda-E" role="rowheader" scope="row">
+              East
+            </th>
+            <td class="num" headers="tbl-cgi-A pda-E q1 jan">245</td>
+            <td class="num" headers="tbl-cgi-A pda-E q1 feb">320</td>
+            <td class="num" headers="tbl-cgi-A pda-E q1 mar">270</td>
+            <td class="num" headers="tbl-cgi-A pda-E q2 apr">288</td>
+            <td class="num" headers="tbl-cgi-A pda-E q2 may">325</td>
+            <td class="input">
+              <input aria-labelledby="tbl-cgi-A pda-E q2 jun" name="pda-E-jun">
+            </td>
+          </tr>
+          <tr role="row">
+            <th id="pda-S" role="rowheader" scope="row">
+              South
+            </th>
+            <td class="num" headers="tbl-cgi-A pda-S q1 jan">222</td>
+            <td class="num" headers="tbl-cgi-A pda-S q1 feb">297</td>
+            <td class="num" headers="tbl-cgi-A pda-S q1 mar">255</td>
+            <td class="num" headers="tbl-cgi-A pda-S q2 apr">325</td>
+            <td class="num" headers="tbl-cgi-A pda-S q2 may">226</td>
+            <td class="input">
+              <input aria-labelledby="tbl-cgi-A pda-S q2 jun" name="pda-S-jun">
+            </td>
+          </tr>
+          <tr role="row">
+            <th id="pda-W" role="rowheader" scope="row">
+              West
+            </th>
+            <td class="num" headers="tbl-cgi-A pda-W q1 jan">145</td>
+            <td class="num" headers="tbl-cgi-A pda-W q1 feb">220</td>
+            <td class="num" headers="tbl-cgi-A pda-W q1 mar">170</td>
+            <td class="num" headers="tbl-cgi-A pda-W q2 apr">188</td>
+            <td class="num" headers="tbl-cgi-A pda-W q2 may">225</td>
+            <td class="input">
+              <input aria-labelledby="tbl-cgi-A pda-W q2 jun" name="pda-W-jun">
+            </td>
+          </tr>
+          <tr role="row">
+            <th class="rowgroup" colspan="7" id="tbl-cgi-B" scope="colgroup">
+              Product B
+            </th>
+          </tr>
+          <tr role="row">
+            <th id="pdb-N" role="rowheader" scope="row">
+              North
+            </th>
+            <td class="num" headers="tbl-cgi-B pdb-N q1 jan">145</td>
+            <td class="num" headers="tbl-cgi-B pdb-N q1 feb">170</td>
+            <td class="num" headers="tbl-cgi-B pdb-N q1 mar">170</td>
+            <td class="num" headers="tbl-cgi-B pdb-N q2 apr">145</td>
+            <td class="num" headers="tbl-cgi-B pdb-N q2 may">170</td>
+            <td class="input">
+              <input aria-labelledby="tbl-cgi-B pdb-N q2 jun" name="pdb-N-jun">
+            </td>
+          </tr>
+          <tr role="row">
+            <th id="pdb-E" role="rowheader" scope="row">
+              East
+            </th>
+            <td class="num" headers="tbl-cgi-B pdb-E q1 jan">145</td>
+            <td class="num" headers="tbl-cgi-B pdb-E q1 feb">120</td>
+            <td class="num" headers="tbl-cgi-B pdb-E q1 mar">170</td>
+            <td class="num" headers="tbl-cgi-B pdb-E q2 apr">188</td>
+            <td class="num" headers="tbl-cgi-B pdb-E q2 may">125</td>
+            <td class="input">
+              <input aria-labelledby="tbl-cgi-B pdb-E q2 jun" name="pdb-E-jun">
+            </td>
+          </tr>
+          <tr role="row">
+            <th id="pdb-S" role="rowheader" scope="row">
+              South
+            </th>
+            <td class="num" headers="tbl-cgi-B pdb-S q1 jan">122</td>
+            <td class="num" headers="tbl-cgi-B pdb-S q1 feb">197</td>
+            <td class="num" headers="tbl-cgi-B pdb-S q1 mar">155</td>
+            <td class="num" headers="tbl-cgi-B pdb-S q2 apr">125</td>
+            <td class="num" headers="tbl-cgi-B pdb-S q2 may">126</td>
+            <td class="input">
+              <input aria-labelledby="tbl-cgi-B pdb-S q2 jun" name="pdb-S-jun">
+            </td>
+          </tr>
+          <tr role="row">
+            <th id="pdb-W" role="rowheader" scope="row">
+              West
+            </th>
+            <td class="num" headers="tbl-cgi-B pdb-W q1 jan">145</td>
+            <td class="num" headers="tbl-cgi-B pdb-W q1 feb">120</td>
+            <td class="num" headers="tbl-cgi-B pdb-W q1 mar">170</td>
+            <td class="num" headers="tbl-cgi-B pdb-W q2 apr">188</td>
+            <td class="num" headers="tbl-cgi-B pdb-W q2 may">125</td>
+            <td class="input">
+              <input aria-labelledby="tbl-cgi-B pdb-W q2 jun" name="pdb-W-jun">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div aria-live="polite" id="table-rg-cg-status" role="status"></div>
+    </section>
+
+    <script src="table.js"></script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Menu</title>
+    <meta charset="UTF-8">
+    <link href="menu.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Menu</h1>
+    <section class="menu"
+      aria-label="Text Formatting"
+      aria-controls="tools-affect-me">
+      <div role="group">
+        <button
+          aria-label="bold"
+          aria-pressed="false"
+          value="bold">
+        </button>
+        <button
+          aria-label="Italic"
+          aria-pressed="false"
+          value="italic"
+        >
+        </button>
+        <button
+          aria-label="Underline"
+          aria-pressed="false"
+          value="underline"
+        >
+        </button>
+      </div>
+      <div role="group">
+        <button
+          aria-label="Text align left"
+          aria-pressed="true"
+          value="align-left"
+        >
+        </button>
+        <button
+          aria-label="Text align center"
+          aria-pressed="false"
+          value="align-center"
+        >
+        </button>
+        <button
+          aria-label="Text align right"
+          aria-pressed="false"
+          value="align-right"
+        >
+        </button>
+        <button
+          aria-label="Justify text"
+          aria-pressed="false"
+          value="align-justify"
+        >
+        </button>
+      </div>
+      <div role="group">
+        <button
+          aria-disabled="true"
+          title="Copy selected text from textarea"
+        >
+          Copy
+        </button>
+        <button
+          aria-disabled="true"
+          title="Paste last copied or cut text to textarea"
+        >
+          Paste
+        </button>
+        <button
+          aria-disabled="true"
+          title="Cut selected text from textarea"
+        >
+          Cut
+        </button>
+      </div>
+      <div class="font-menu" role="group">
+        <div>
+          <select name="font-family">
+            <option>
+              Sans-serif
+            </option>
+            <option>
+              Serif
+            </option>
+            <option>
+              Monospace
+            </option>
+            <option>
+              Fantasy
+            </option>
+            <option>
+              Cursive
+            </option>
+          </select>
+        </div>
+        <div>
+          <label for="font-size">Font Size</label>
+          <select id="font-size">
+            <option>0.5</option>
+            <option selected="true">1</option>
+            <option>1.5</option>
+            <option>2</option>
+            <option>2.5</option>
+            <option>3</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <script src="menu.js"></script>
+  </body>
+</html>

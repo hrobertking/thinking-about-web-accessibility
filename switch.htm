@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Switch</title>
+    <meta charset="UTF-8">
+    <link href="field.css" rel="stylesheet" />
+    <link href="switch.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Switch</h1>
+    <section>
+      <h2>Visible labels</h2>
+
+      <label class="toggle">
+        <span class="label" id="tgl-label">Push Notifications</span>
+        <span aria-hidden="true" class="switch-label"
+          id="tgl-false">Off</span>
+        <input aria-labelledby="tgl-label" type="checkbox" />
+        <span class="switch">
+          <span class="switch-button"></span>
+        </span>
+        <span aria-hidden="true" class="switch-label" id="tgl-true">On</span>
+      </label>
+    </section>
+
+    <section>
+      <h2>No visible labels</h2>
+
+      <label class="toggle no-labels">
+        <span class="label" id="tgl-nolabel">Push Notifications</span>
+        <span aria-hidden="true" class="switch-label"
+          id="tgl-nolabel-false">Off</span>
+        <input aria-labelledby="tgl-nolabel" type="checkbox" />
+        <span class="switch">
+          <span class="switch-button"></span>
+        </span>
+        <span aria-hidden="true" class="switch-label" id="tgl-nolabel-true">On</span>
+      </label>
+    </section>
+    <script src="switch.js"></script>
+  </body>
+</html>

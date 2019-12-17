@@ -1,0 +1,25 @@
+.stepper .controls {
+  display: inline-flex;
+}
+.stepper .controls button {
+  display: inline-block;
+  margin: 0;
+  width: 2em;
+}
+.stepper .controls button:first-of-type {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right: 0;
+}
+.stepper .controls button:last-of-type {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.stepper .controls [role="alert"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  left: -200%;
+  overflow: hidden;
+  position: absolute;
+}

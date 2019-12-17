@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Journey</title>
+    <meta charset="UTF-8">
+    <link href="journey.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Journey</h1>
+    <section>
+      <h2>HTML for a Linear Manual Journey</h2>
+      <p>Billing Address is the <em>current</em> step</p>
+      <ol aria-label="Pay for your items" class="journey">
+        <li aria-current="step">
+          <span>Billing Address</span>
+        </li>
+        <li>
+          <span>Shipping Address</span>
+        </li>
+        <li>
+          <span>Payment</span>
+        </li>
+      </ol>
+      <span role="alert"></span>
+    </section>
+    <section>
+      <h2>HTML for a Non-linear Manual Journey</h2>
+      <p>Billing Address is <em>completed</em>, Shipping Address is the <em>current</em> step.</p>
+      <nav aria-label="Pay for your items">
+        <ol class="journey">
+          <li class="completed">
+            <a href="/billing">Billing Address</a>
+          </li>
+          <li aria-current="step">
+            <a href="/shipping">Shipping Address</a>
+          </li>
+          <li>
+            <a href="/payment">Payment</a>
+          </li>
+        </ol>
+      </nav>
+    </section>
+    <section>
+      <h2>HTML for a Non-linear Automatic Journey</h2>
+      <p>Billing Address is <em>completed</em>, Shipping Address is not started, Payment is the <em>current</em> step.</p>
+      <ol aria-label="Pay for your items" class="journey">
+        <li class="completed">
+          <span>Billing Address</span>
+        </li>
+        <li>
+          <span>Shipping Address</span>
+        </li>
+        <li aria-current="step">
+          <span>Payment</span>
+        </li>
+      </ol>
+      <span role="alert"></span>
+    </section>
+
+    <script src="journey.js"></script>
+  </body>
+</html>

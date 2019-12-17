@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Toolbar</title>
+    <meta charset="UTF-8">
+    <link href="listbox.css" rel="stylesheet" />
+    <link href="toolbar.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Toolbar</h1>
+    <section class="toolbar"
+      aria-label="Text Formatting"
+      aria-controls="tools-affect-me">
+      <div role="group">
+        <button
+          aria-label="bold"
+          aria-pressed="false"
+          value="bold">
+        </button>
+        <button
+          aria-label="Italic"
+          aria-pressed="false"
+          value="italic"
+        >
+        </button>
+        <button
+          aria-label="Underline"
+          aria-pressed="false"
+          value="underline"
+        >
+        </button>
+      </div>
+      <div role="group">
+        <button
+          aria-label="Text align left"
+          aria-pressed="true"
+          value="align-left"
+        >
+        </button>
+        <button
+          aria-label="Text align center"
+          aria-pressed="false"
+          value="align-center"
+        >
+        </button>
+        <button
+          aria-label="Text align right"
+          aria-pressed="false"
+          value="align-right"
+        >
+        </button>
+        <button
+          aria-label="Justify text"
+          aria-pressed="false"
+          value="align-justify"
+        >
+        </button>
+      </div>
+      <div role="group">
+        <button
+          aria-disabled="true"
+          title="Copy selected text from textarea"
+        >
+          Copy
+        </button>
+        <button
+          aria-disabled="true"
+          title="Paste last copied or cut text to textarea"
+        >
+          Paste
+        </button>
+        <button
+          aria-disabled="true"
+          title="Cut selected text from textarea"
+        >
+          Cut
+        </button>
+      </div>
+      <div class="font-menu" role="group">
+        <div>
+          <button
+            aria-haspopup="listbox"
+            aria-controls="font-list"
+            aria-label="Font family"
+            aria-pressed="false"
+            id="font-family"
+          >
+            <span style="font-family: sans-serif">
+              Sans-serif
+            </span>
+          </button>
+          <ul
+            aria-labelledby="font-family"
+            class="submenu"
+            id="font-list"
+            role="listbox"
+            tabindex="-1"
+          >
+            <li role="option">
+              <span style="font-family: sans-serif">
+                Sans-serif
+              </span>
+            </li>
+            <li role="option">
+              <span style="font-family: serif">
+                Serif
+            </li>
+            <li role="option">
+              <span style="font-family: monspace">
+                Monospace
+            </li>
+            <li role="option">
+              <span style="font-family: fantasy">
+                Fantasy
+            </li>
+            <li role="option">
+              <span style="font-family: cursive">
+                Cursive
+            </li>
+          </ul>
+        </div>
+        <div>
+          <label for="font-size">Font Size</label>
+          <select id="font-size">
+            <option>0.5</option>
+            <option selected="true">1</option>
+            <option>1.5</option>
+            <option>2</option>
+            <option>2.5</option>
+            <option>3</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <script src="listbox.js"></script>
+    <script src="toolbar.js"></script>
+  </body>
+</html>

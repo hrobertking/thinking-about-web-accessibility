@@ -1,0 +1,65 @@
+.carousel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.carousel .gallery {
+  align-items: center;
+  display: flex;
+}
+.carousel .viewer {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.carousel figure {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  height: 500px;
+  width: 500px;
+}
+.carousel img {
+  display: inline-block;
+  max-height: 500px;
+  max-width: 500px;
+}
+.carousel li[aria-hidden="true"] {
+  display: none;
+}
+
+button[name="play"]::before {
+  content: '▶';
+  display: inline;
+}
+button[name="pause"]::before {
+  content: '❚❚';
+  display: inline;
+}
+
+.carousel .indicator,
+.carousel .indicator ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.carousel .indicator ul:not(:last-of-type) {
+  margin-right: 1rem;
+}
+.carousel .indicator li button {
+  border-radius: 100%;
+  display: inline-block;
+  height: 1.2rem;
+  line-height: 0;
+  margin: 0 0.25rem;
+  padding: 0;
+  text-align: center;
+  width: 1.2rem;
+}
+.carousel .indicator li [aria-selected="true"] {
+  box-shadow: 0 0 0.25rem currentColor;
+  font-weight: bold;
+}

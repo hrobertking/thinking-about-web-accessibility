@@ -1,0 +1,24 @@
+/*
+the line-height of the header is set to zero because the UTF-8 triangle, which is visually the same as the twistie used by the HTML5 summary tag, is not the same height as the text in the header. Additionally, the twistie symbol does not have the same width as height, so the width is set to prevent the text from jumping up and down or left and right when the section is expanded or collapsed and the twistie twists
+*/
+.accordion > header {
+  cursor: pointer;
+}
+.accordion header button {
+  border: none;
+  margin-right: 0.5em;
+}
+.accordion header button[aria-expanded="false"]::before {
+  content: '▶';
+}
+.accordion header button[aria-expanded="true"]::before {
+  content: '▼';
+}
+.accordion header + [aria-expanded="false"] {
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  left: -200% !important;
+  overflow: hidden;
+  position: absolute !important;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Stepper</title>
+    <meta charset="UTF-8">
+    <link href="field.css" rel="stylesheet" />
+    <link href="stepper.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Stepper</h1>
+    <span class="field stepper">
+      <label for="amt">Payment Amount</label>
+      <input class="number" data-min="0" data-max="50" data-step="10" id="amt" type="text" />
+      <span class="status"></span>
+      <span class="controls">
+        <button aria-label="subtract 10" class="decrement">-</button>
+        <button aria-label="add 10" class="increment">+</button>
+        <span role="alert"></span>
+      </span>
+    </span>
+    <script src="stepper.js"></script>
+  </body>
+</html>

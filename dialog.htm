@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Dialog</title>
+    <meta charset="UTF-8">
+    <link href="dialog.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Dialog</h1>
+    <button onclick="mydialog.open()">Open Dialog</button>
+    <div class="dialog" id="mydialog">
+      <section
+        aria-describedby="dialog-content"
+        aria-labelledby="dialog-label"
+        role="dialog"
+        tabindex="0"
+      >
+        <header>
+          <h2 id="dialog-label">System Notification</h2>
+          <button aria-label="close" class="close" type="button">
+            ×
+          </button>
+        </header>
+        <section id="dialog-content">
+          <p>
+            System shutdown in 3 minutes. Please save your data and exit.
+          </p>
+          <button class="close" type="button">
+            Cancel
+          </button>
+        </section>
+      </section>
+    </div>
+    <script src="dialog.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+/* include field.css for general formatting */
+/*
+although the following CSS uses aria-checked, it is highly recommended that the aria-checked attribute not be used on a native checkbox unless a three-state checkbox is being used and the aria-checked attribute is set via scripting
+*/
+fieldset.checkbox {
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+}
+fieldset.checkbox > .field {
+  margin-left: 0;
+}
+
+:not(.toggle) [type="checkbox"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  left: -200%;
+  overflow: hidden;
+  outline: none;
+  position: absolute;
+}
+:not(.toggle) [type="checkbox"] + span {
+  align-items: center;
+  display: inline-flex;
+}
+:not(.toggle) [type="checkbox"] + span.trailing::after,
+:not(.toggle) [type="checkbox"] + span:not(.switch):not(.trailing)::before {
+  background-color: hsl(0, 0%, 99%);
+  border: 0.0625rem solid hsl(0, 0%, 60%);
+  border-radius: 0.25rem;
+  color: hsl(0, 0%, 1%);
+  content: '\202F';
+  display: inline-block;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  margin: 0 0.5rem;
+  text-align: center;
+  width: 1.2rem;
+}
+:not(.toggle) [type="checkbox"][aria-checked="mixed"] + span.trailing::after,
+:not(.toggle) [type="checkbox"][aria-checked="mixed"] + span:not(.switch):not(.trailing)::before,
+:not(.toggle) [type="checkbox"][aria-checked="true"] + span.trailing::after,
+:not(.toggle) [type="checkbox"][aria-checked="true"] + span:not(.switch):not(.trailing)::before,
+:not(.toggle) [type="checkbox"]:checked + span.trailing::after,
+:not(.toggle) [type="checkbox"]:checked + span:not(.switch):not(.trailing)::before {
+  background-color: hsl(204, 100%, 40%);
+  border-color: transparent;
+  color: hsl(204, 100%, 99%);
+}
+:not(.toggle) [type="checkbox"][aria-checked="true"] + span.trailing::after,
+:not(.toggle) [type="checkbox"][aria-checked="true"] + span:not(.switch):not(.trailing)::before,
+:not(.toggle) [type="checkbox"]:checked + span.trailing::after,
+:not(.toggle) [type="checkbox"]:checked + span:not(.switch):not(.trailing)::before {  
+  content: '✓';
+}
+:not(.toggle) [type="checkbox"][aria-checked="mixed"] + span.trailing::after,
+:not(.toggle) [type="checkbox"][aria-checked="mixed"] + span:not(.trailing)::before {
+  content: '-';
+}
+:not(.toggle) [type="checkbox"]:focus + span:before {
+  border-color: hsl(204, 100%, 40%);
+}
+:not(.toggle) [type="checkbox"]:focus + span > label {
+  text-shadow: 0 0 0.5em hsl(204, 100%, 75%);
+}

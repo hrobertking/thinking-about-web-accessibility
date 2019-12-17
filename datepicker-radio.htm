@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>DatePicker</title>
+    <meta charset="UTF-8">
+    <link href="field.css" rel="stylesheet" />
+    <link href="datepicker.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>DatePicker</h1>
+    <table class="calendar" role="group">
+      <caption>
+        <button aria-label="Oktober">◀</button>
+        <select id="datepicker-radio-month">
+          <option>Januar</option>
+          <option>Februar</option>
+          <option>März</option>
+          <option>April</option>
+          <option>Mai</option>
+          <option>Juni</option>
+          <option>Juli</option>
+          <option>August</option>
+          <option>September</option>
+          <option>Oktober</option>
+          <option>November</option>
+          <option>Dezember</option>
+        </select>
+        <input aria-label="year" id="datepicker-radio-year" maxlength="4" />
+        <button aria-label="Dezember">▶</button>
+      </caption>
+      <thead>
+        <tr>
+          <th>
+            <abbr title="Sonntag" id="day-0">So</abbr>
+          </th>
+          <th>
+            <abbr title="Montag" id="day-1">Mo</abbr>
+          </th>
+          <th>
+            <abbr title="Dienstag" id="day-2">Di</abbr>
+          </th>
+          <th>
+            <abbr title="Mittwoch" id="day-3">Mi</abbr>
+          </th>
+          <th>
+            <abbr title="Donnerstag" id="day-4">Do</abbr>
+          </th>
+          <th>
+            <abbr title="Freitag" id="day-5">Fr</abbr>
+          </th>
+          <th>
+            <abbr title="Samstag" id="day-6">Sa</abbr>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="before">
+            <label> 
+              27
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-0"
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="before">
+            <label> 
+              28
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-1" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="before">
+            <label> 
+              29
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-2" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="before">
+            <label> 
+              30
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-3" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="before">
+            <label> 
+              31
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-4" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              01
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-5" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              02
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-6" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td class="">
+            <label> 
+              03
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-0" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              04
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-1" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              05
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-2" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              06
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-3" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              07
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-4" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              08
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-5" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              09
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-6" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td class="">
+            <label> 
+              10
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-0" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              11
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-1" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              12
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-2" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              13
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-3" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              14
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-4" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              15
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-5" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              16
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-6" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td class="">
+            <label> 
+              17
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-0" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              18
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-1" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              19
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-2" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              20
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-3" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              21
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-4" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              22
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-5" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              23
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-6" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td class="">
+            <label> 
+              24
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-0" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              25
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-1" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              26
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-2" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              27
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-3" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              28
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-4" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              29
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-5" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="">
+            <label> 
+              30
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-6" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td class="after">
+            <label> 
+              01
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-0" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              02
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-1" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              03
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-2" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              04
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-3" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              05
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-4" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              06
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-5" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              07
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-6" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td class="after">
+            <label> 
+              08
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-0" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              09
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-1" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              10
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-2" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              11
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-3" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              12
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-4" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              13
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-5" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+          <td class="after">
+            <label> 
+              14
+              <input 
+                aria-describedby="datepicker-radio-year datepicker-radio-monthday-6" 
+                name="datepicker-radio"
+                type="radio"
+              />
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="datepicker.js"></script>
+  </body>
+</html>

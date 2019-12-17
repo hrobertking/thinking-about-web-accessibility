@@ -1,0 +1,47 @@
+.datepicker.field {
+  margin-bottom: 0;
+}
+.datepicker .input input {
+  border-right: 0;
+  border-radius: 0.25em 0 0 0.25em;
+}
+.datepicker .input button {
+  border-radius: 0 0.25em 0.25em 0;
+  margin-left: -0.6em;
+  position: relative;
+  width: 2em;
+}
+.datepicker + [role="region"][aria-hidden="true"] {
+  display: none;
+}
+.datepicker + [role="region"]::before {
+  border-bottom: 0.5em solid hsl(204, 100%, 30%);
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  content: '';
+  display: block;
+  margin-left: 2em;
+  width: 0;
+}
+
+.calendar {
+  border: 0.0625em solid hsl(204, 100%, 30%);
+}
+.calendar tbody td {
+  border: 0.0625em solid hsl(204, 100%, 60%);
+  width: 14%;
+}
+.calendar tbody td > button {
+  border: 0;
+  text-align: right;
+  width: 100%;
+}
+.calendar tbody td > button::after {
+  content: '';
+  display: block;
+  padding-bottom: 50%;
+}
+.calendar thead td,
+.calendar thead th {
+  text-align: center;
+}

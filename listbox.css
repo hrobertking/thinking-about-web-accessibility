@@ -1,0 +1,39 @@
+[role="listbox"] {
+  display: inline-flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  position: relative;
+}
+[role="listbox"] [role="option"] {
+  padding-right: 2em;
+}
+[role="listbox"][aria-expanded="true"] [aria-current="true"] {
+  background-color: hsl(204, 100%, 95%);
+}
+[role="listbox"][aria-expanded="false"]:not([aria-multiselectable]) {
+  height: 1.5em;
+  overflow: hidden;
+}
+[role="listbox"][aria-expanded]:not([aria-multiselectable])::after {
+  content: '▼';
+  margin: 0.25em;
+  position: absolute;
+  right: 0;
+}
+[role="listbox"][aria-expanded="true"]:not([aria-multiselectable])::after {
+  color: transparent;
+}
+[role="listbox"][aria-expanded="false"][data-selectedIndex]:not([aria-multiselectable])
+[role="option"]:not([aria-selected]) {
+  height: 0;
+}
+[role="listbox"][aria-expanded="false"] [role="option"] {
+  white-space: nowrap;
+}
+[role="listbox"] [role="option"] {
+  line-height: 1.5em;
+}
+[role="listbox"] [aria-selected="true"] {
+  background-color: hsl(204, 100%, 90%);
+}

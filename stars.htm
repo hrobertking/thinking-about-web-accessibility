@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Stars</title>
+    <meta charset="UTF-8">
+    <link href="field.css" rel="stylesheet" />
+    <link href="stars.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Stars</h1>
+    <fieldset class="stars">
+      <legend id="group-label">How would you rate the fruit</legend>
+ 
+      <!-- this allows the user to 'unset' the number of stars -->
+      <input aria-describedby="group-label" id="star0" name="star" type="radio" checked>
+      <label for="star0">0</label>
+      
+      <input aria-describedby="group-label" id="star1" name="star" type="radio" value="1">
+      <label for="star1">1</label>
+      <input aria-describedby="group-label" id="star2" name="star" type="radio" value="2">
+      <label for="star2">2</label>
+      <input aria-describedby="group-label" id="star3" name="star" type="radio" value="3">
+      <label for="star3">3</label>
+      <input aria-describedby="group-label" id="star4" name="star" type="radio" value="4">
+      <label for="star4">4</label>
+      <input aria-describedby="group-label" id="star5" name="star" type="radio" value="5">
+      <label for="star5">5</label>
+    </fieldset>
+
+    <script src="stars.js"></script>
+  </body>
+</html>

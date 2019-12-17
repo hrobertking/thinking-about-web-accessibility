@@ -1,0 +1,4 @@
+/* include field.css for general formatting */
+input.year {
+  width: 4em;
+}

@@ -1,0 +1,48 @@
+.flyout-container {
+  /*
+   * if aligning the flyout to the left:
+   *   – use `align-items: flex-start`
+   *   – use `left: 0`
+   * if aligning the flyout to the right:
+   *   – use `align-items: flex-end`
+   *   – use `right: 0`
+   */
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  z-index: 1;
+}
+.flyout {
+  display: inline-block;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.flyout-content {
+  background: hsl(0, 0%, 99%);
+  border: 0.0625em solid hsl(204, 100%, 30%);
+  border-radius: 0.25em;
+  box-shadow: 0.2em 0.2em 1em hsl(204, 100%, 30%);
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-top: 0.75em;
+  padding: 0.25em;
+}
+.flyout-content::before {
+  border-bottom: 0.7em solid hsl(204, 100%, 30%);
+  border-left: 0.3em solid transparent;
+  border-right: 0.3em solid transparent;
+  content: '';
+  display: block;
+  height: 0;
+  margin: -1em 0.5em 0;
+  width: 0;
+}
+.flyout-content[aria-hidden="true"] {
+  display: none;
+}
+.flyout-content fieldset {
+  border: 0;
+  margin: 1em;
+  padding: 0;
+}

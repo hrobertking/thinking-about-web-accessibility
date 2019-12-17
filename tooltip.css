@@ -1,0 +1,88 @@
+[role="group"] [role="tooltip"] {
+  margin-left: 100%;
+  top: 0;
+}
+[role="tooltip"] {
+  align-items: center;
+  clip-path: polygon(0 0, 0 1.5em, 1.5em 1.5em, 1.5em 0);
+  cursor: pointer;
+  display: inline-flex;
+  position: absolute;
+  z-index: 1;
+}
+[role="tooltip"] [role="presentation"] {
+  align-self: flex-start;
+  background: hsl(204, 100%, 90%);
+  border: 0.1em solid transparent;
+  border-radius: 50%;
+  fill: currentColor;
+  flex-grow: 0;
+  flex-shrink: 0;
+  line-height: 1.3em;
+  height: 1em;
+  padding: 0.0625em;
+  width: 1em;
+}
+[role="tooltip"] [role="alert"] {
+  background-color: hsl(0, 100%, 100%);
+  border: 0.1em solid hsl(204, 100%, 30%);
+  border-radius: 0.25em;
+  display: none;
+  font-size: 0.8em;
+  margin: 0 0.3em;
+  max-width: 10em; /* change this to the max width of the tooltip text */
+  padding: 0.25em;
+}
+[role="tooltip"] [role="alert"]::before {
+  border: 0.3em solid hsl(204, 100%, 30%);
+  border-bottom-color: transparent;
+  border-left: 0;
+  border-top-color: transparent;
+  border-radius: 0;
+  content: '';
+  display: inline-block;
+  height: 0;
+  margin: 0.1em 0.6em 0.1em -0.6em;
+  position: relative;
+  width: 0;
+}
+[role="tooltip"]:active [role="presentation"],
+[role="tooltip"]:focus [role="presentation"],
+[role="tooltip"]:hover [role="presentation"] {
+  border-color: hsl(204, 100%, 30%);
+}
+label [role="tooltip"] {
+  margin-left: 0.25em;
+}
+label [role="tooltip"] [role="presentation"] {
+  height: .8em;
+  width: .8em;
+}
+
+/* tooltip shows on focus */
+[role="tooltip"]:not(.dismissed):active,
+[role="tooltip"]:not(.dismissed):focus,
+[role="tooltip"]:not(.dsimissed):hover {
+  clip-path: none;
+  outline: none;
+}
+[role="tooltip"]:not(.dismissed):active [role="alert"],
+[role="tooltip"]:not(.dismissed):focus [role="alert"],
+[role="tooltip"]:not(.dsimissed):hover [role="alert"] {
+  display: inline-flex;
+}
+
+/* tooltip shows on adjacent form element focus */
+.field button:focus ~ [role="tooltip"],
+.field input:focus ~ [role="tooltip"],
+.field select:focus ~ [role="tooltip"],
+.field textarea:focus ~ [role="tooltip"] {
+  clip-path: none;
+  outline: none;
+}
+.field button:focus ~ [role="tooltip"] [role="alert"],
+.field input:focus ~ [role="tooltip"] [role="alert"],
+.field select:focus ~ [role="tooltip"] [role="alert"],
+.field textarea:focus ~ [role="tooltip"] [role="alert"] {
+  display: inline-flex;
+}

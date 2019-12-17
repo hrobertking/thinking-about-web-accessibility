@@ -1,0 +1,46 @@
+.tabs > ol {
+  align-items: flex-end;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.tabs > ol > li {
+  border: 0.0625rem solid hsla(204, 0%, 60%, 1);
+  border-bottom: 0;
+  margin-right: 0.0625rem;
+  overflow: hidden;
+}
+.tabs > ol > li > :first-child {
+  border-bottom: 0.25rem solid hsla(204, 0%, 90%, 0.5);
+  border-top: 0.25rem solid hsla(204, 0%, 90%, 0.5);
+  color: hsla(204, 0%, 70%, 1);
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+.tabs > ol > li > :first-child:focus {
+  border-bottom: 0.25rem solid hsla(204, 0%, 80%, 0.5);
+  border-top: 0.25rem solid hsla(204, 0%, 80%, 0.5);
+  color: hsla(204, 0%, 35%, 1);
+}
+.tabs > ol > li > :first-child[aria-selected="true"] {
+  background-color: hsla(204, 100%, 95%, 1);
+  border-bottom-color: transparent;
+  border-top-color: hsla(204, 100%, 35%, 0.7);
+  color: hsla(204, 100%, 35%, 1);
+}
+.tabs > ol > li > :first-child[aria-selected="true"]:focus {
+  background-color: unset;
+}
+.tabs > :not(ol) {
+  border: 0.0625rem solid hsla(204, 0%, 60%, 1);
+  padding: 0.5rem;
+}
+.tabs > :not(ol) > :first-child {
+  margin-top: 0.25rem;
+  padding-top: 0;
+}
+.tabs > [aria-hidden="true"] {
+  display: none;
+}

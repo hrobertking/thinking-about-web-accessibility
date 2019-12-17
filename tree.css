@@ -1,0 +1,31 @@
+.tree [tabindex] {
+  border: 0.0625em solid transparent;
+  box-shadow: 0 0 0.5em 0.25em transparent;
+  outline: none;
+}
+.tree :focus {
+  border: 0.0625em solid hsl(204, 100%, 30%);
+  box-shadow: 0 0 0.5em 0.25em hsl(204, 100%, 30%);
+  outline: none;
+}
+.tree ul {
+  margin: 0;
+}
+.tree li {
+  list-style-type: none;
+}
+[role="treeitem"][aria-expanded]::before {
+  display: inline-block;
+  height: 1em;
+  padding: 0.125em;
+  width: 1em;
+}
+[role="treeitem"][aria-expanded="false"]:before {
+  content: '+';
+}
+[role="treeitem"][aria-expanded="true"]:before {
+  content: '-';
+}
+[role="treeitem"][aria-expanded="false"] :not(:first-child) {
+  display: none;
+}
