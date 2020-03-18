@@ -65,6 +65,12 @@ table .rowgroup {
   background-color: hsl(204, 100%, 95%);
 }
 
+table th[aria-sort] > button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
 table th[aria-sort="ascending"]::after {
   content: '↑';
   display: inline-block;
