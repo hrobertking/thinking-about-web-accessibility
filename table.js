@@ -3,6 +3,7 @@
   var description = document.getElementById(
       table.getAttribute('aria-describedby')
     ) || document.createElement('div'),
+    transition = ['none', 'ascending', 'descending'],
     sort = function (th) {
       var th,
         ordering = {
@@ -10,7 +11,6 @@
           descending: -1,
           none: 0
         },
-        transition = ['none', 'ascending', 'descending'],
         currentSort = th.getAttribute('aria-sort'),
         nextSort = transition.indexOf(currentSort) + 1,
         sortOrder = transition[nextSort] || transition[0],
@@ -88,7 +88,7 @@
   
   [].slice.call(table.getElementsByTagName('th'))
   .forEach(function (th) {
-    if (th.getAttribute(`aria-sort`) !== '') {
+    if (transition.indexOf(th.getAttribute(`aria-sort`) > -1) {
 	  var btn = document.createElement('button'),
 		handler = function () {
 		  sort(th);
