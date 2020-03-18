@@ -88,7 +88,7 @@
   
   [].slice.call(table.getElementsByTagName('th'))
   .forEach(function (th) {
-    if (transition.indexOf(th.getAttribute(`aria-sort`) > -1) {
+    if (transition.indexOf(th.getAttribute(`aria-sort`)) > -1) {
 	  var btn = document.createElement('button'),
 		handler = function () {
 		  sort(th);
