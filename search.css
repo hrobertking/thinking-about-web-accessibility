@@ -11,8 +11,9 @@
 .search [role="group"] button > svg {
   display: block;
   fill: transparent;
+  height: 1.2em;
   stroke: currentColor;
-  min-width: 1.2em;
+  width: 1.2em;
 }
 .search .results:not(:empty) {
   border-top: 0.125em solid hsl(204, 100%, 60%);
