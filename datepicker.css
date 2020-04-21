@@ -45,3 +45,29 @@
 .calendar thead th {
   text-align: center;
 }
+
+.period input,
+.period select {
+  border: 1px solid hsl(204, 100%, 60%);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  font-size: 1em;
+  line-height: 0;
+  height: 44px;
+  margin: 0 0.25em;
+  padding: 0;
+  text-align: center;
+}
+.period input {
+  width: 4em;
+}
+.period select {
+  position: relative;
+  top: -1px;
+}
+.period :last-child {
+    margin-right: 0;
+}
+.period :first-child {
+    margin-left: 0;
+}
