@@ -55,14 +55,16 @@
             isAfter = d.getFullYear() > PERIOD.getFullYear() ||
               d.getMonth() > PERIOD.getMonth(),
             isBefore = d.getFullYear() < PERIOD.getFullYear() ||
-              d.getMonth() < PERIOD.getMonth();
+              d.getMonth() < PERIOD.getMonth(),
+            span = button.getElementsByTagName('span').item(0);
 
           col.className = [
             col.className.replace(/\b(before|after)\b/, ''),
             isAfter ? 'after' : '',
             isBefore ? 'before' : ''
           ].join(' ').trim();
-          button.getElementsByTagName('span').item(0).innerHTML = ('0' + d.getDate()).substr(-2);
+          span.setAttribute('data-value', iso);
+          span.innerHTML = ('0' + d.getDate()).substr(-2);
         });
       });
     }
@@ -176,7 +178,8 @@
   function DatePickerCalendar() {
     var clicked = function (e) {
         var target = e.target,
-          label = target ? target.getAttribute('aria-label') : '';
+          el = target ? target.getElementsByTagName('span').item(0) : '',
+          label = el ? el.getAttribute('data-value') : '';
 
         if (label) {
           input.setAttribute('value', input.toString(label));
