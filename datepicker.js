@@ -19,7 +19,11 @@
     year = document.createElement('input');
 
   sibling = sibling.getAttribute('role') === 'status' ? sibling : input;
-
+  
+  // todo: needs a lang or a way to set the label based on the BCP47 code
+  months.setAttribute('aria-label', 'month');
+  year.setAttribute('aria-label', 'year');
+  
   calendar.className = 'calendar';
   calendar.appendChild(thead);
   calendar.appendChild(tbody);
@@ -58,8 +62,7 @@
             isAfter ? 'after' : '',
             isBefore ? 'before' : ''
           ].join(' ').trim();
-          button.setAttribute('aria-label', iso);
-          button.innerHTML = ('0' + d.getDate()).substr(-2);
+          button.getElementsByTagName('span').item(0).innerHTML = ('0' + d.getDate()).substr(-2);
         });
       });
     }
@@ -183,7 +186,7 @@
       idx = 0,
       row = thead.insertRow(-1),
       col = row.insertCell(-1),
-      btn;
+      btn, span, dow;
 
     col.appendChild(prev);
 
@@ -204,10 +207,15 @@
       row.setAttribute('role', 'row');
 
       for (var i = 0; i < 7; i += 1) {
+        dow = 'day-' + i;
+        span = document.createElement('span');
+        span.id = calendarId + '-' + c + '-' + i;
+        
         btn = document.createElement('button');
         btn.setAttribute('type', 'button');
-        btn.setAttribute('aria-describedby', 'day-' + i);
+        btn.setAttribute('aria-labelledby', [dow, span.id].join(' '));
         btn.addEventListener('click', clicked);
+        btn.appendChild(span);
 
         col = document.createElement('td');
         col.appendChild(btn);
