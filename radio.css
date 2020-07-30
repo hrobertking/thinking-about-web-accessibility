@@ -1,11 +1,21 @@
-/* include field.css for general formatting */
 fieldset.radio {
   align-items: baseline;
+  border: 0;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+fieldset.radio > legend {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 fieldset.radio > .field {
   margin-left: 0;
+}
+
+.field:not(:last-of-type) {
+  margin-bottom: 1em;
 }
 
 [type="radio"] {
@@ -13,8 +23,8 @@ fieldset.radio > .field {
   clip: rect(0, 0, 0, 0);
   clip-path: polygon(0 0, 0 0, 0 0, 0 0);
   left: -200%;
-  overflow: hidden;
   outline: none;
+  overflow: hidden;
   position: absolute;
 }
 [type="radio"] + span {
@@ -25,32 +35,25 @@ fieldset.radio > .field {
 [type="radio"] + span:not(.trailing)::before {
   background-color: hsl(0, 0%, 99%);
   border: 0.0625rem solid hsl(0, 0%, 60%);
-  border-radius: 100%;
+  border-radius: 50%;
   color: hsl(0, 0%, 1%);
   content: '\202F';
-  display: inline-flex;
-  flex-direction: column;
+  display: inline-block;
   height: 1.2rem;
-  justify-content: center;
+  line-height: 1.2rem;
   margin: 0 0.5rem;
   text-align: center;
   width: 1.2rem;
 }
-[type="radio"][aria-checked="true"] + span.trailing::after,
-[type="radio"][aria-checked="true"] + span:not(.trailing)::before,
 [type="radio"]:checked + span.trailing::after,
 [type="radio"]:checked + span:not(.trailing)::before {
-  background-color: transparent;
-  border-color: hsl(204, 100%, 40%);
-  color: hsl(204, 100%, 40%);
+  background-color: hsl(204, 100%, 40%);
+  border-color: transparent;
+  color: hsl(204, 100%, 99%);
 }
-[type="radio"][aria-checked="true"] + span.trailing::after,
-[type="radio"][aria-checked="true"] + span:not(.trailing)::before,
 [type="radio"]:checked + span.trailing::after,
 [type="radio"]:checked + span:not(.trailing)::before {  
   content: '●';
-  font-size: 1.2rem;
-  text-align: center;
 }
 [type="radio"]:focus + span:before {
   border-color: hsl(204, 100%, 40%);
@@ -58,4 +61,3 @@ fieldset.radio > .field {
 [type="radio"]:focus + span > label {
   text-shadow: 0 0 0.5em hsl(204, 100%, 75%);
 }
-
