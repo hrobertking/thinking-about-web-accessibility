@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Speedometer</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <h1>Speedometer</h1>
+    <p>
+      This component simply illustrates what a visual interface for a value displayed as
+      a meter <em>might</em> look. It does not have a widget role as the visual representation
+      is merely presentation and the interactive portions (buttons and text input) are all
+      labeled.
+    </p>
+
+    <style class="default-styles" type="text/css">
+      .speedometer {
+        width: 10em;
+      }
+      .background {
+        fill: #4F5D73;
+      }
+      .marks {
+        fill: #E0E0D1;
+      }
+      .dial-shadow {
+        fill: #231F20;
+        opacity: 0.2;
+      }
+      .dial {
+        fill: #C75C5C;
+        transition: transform .5s ease-in-out;
+      }
+      .dial-anchor{
+        fill: #FFFFFF;
+        stroke: #E0E0D1;
+        stroke-width: 0.5;
+      }
+      .display .viewport {
+        fill: #F5CF87;
+      }
+      .display .value {
+        fill: #000000;
+      }
+    </style>
+
+    <svg
+      aria-hidden="true"
+      class="speedometer"
+      viewBox="0 0 64 64"
+    >
+      <circle class="background" cx="32" cy="32" r="32"/>
+      <g class="marks">
+        <path
+          id="mark-1"
+          d="M16.4,40.8c0.5,0.7,0.1,1.8-0.7,2.4l-2.3,1.6c-0.9,0.6-2,0.3-2.7-0.7c-0.6-1-0.2-2.3,0.7-2.7l2.5-1.2
+            C15,39.8,16,40.1,16.4,40.8z"
+        />
+        <path
+          id="mark-2"
+          d="M14,31.8c0,0.9-0.7,1.6-1.8,1.7l-2.8,0.3c-1,0.1-2-0.8-2-2c0-1.2,0.9-2.1,1.9-2l2.8,0.2
+            C13.2,30.2,14,30.9,14,31.8z"
+        />
+        <path
+          id="mark-3"
+          d="M16.3,22.7c-0.2,0.4-0.6,0.6-1,0.7c-0.4,0.1-0.9,0.1-1.4-0.1l-2.5-1.2c-0.5-0.2-0.8-0.6-0.9-1.1
+            c-0.2-0.5-0.1-1.1,0.2-1.6c0.3-0.5,0.8-0.9,1.2-1c0.5-0.1,1,0,1.4,0.3l2.3,1.6c0.4,0.3,0.7,0.7,0.8,1.1
+            C16.6,21.9,16.6,22.4,16.3,22.7z"
+        />
+        <path
+          id="mark-4"
+          d="M22.9,16.1c-0.7,0.5-1.8,0.1-2.4-0.7l-1.6-2.3c-0.6-0.9-0.3-2,0.7-2.7c1-0.6,2.3-0.2,2.7,0.7l1.2,2.5
+            C23.9,14.6,23.6,15.6,22.9,16.1z"
+        />
+        <path
+          id="mark-5"
+          d="M31.9,13.6c-0.9,0-1.6-0.7-1.7-1.8L29.9,9c-0.1-1,0.8-2,2-2c1.2,0,2.1,0.9,2,1.9l-0.2,2.8
+            C33.5,12.8,32.8,13.6,31.9,13.6z"
+        />
+        <path
+          id="mark-6"
+          d="M41,16c-0.4-0.2-0.6-0.6-0.7-1c-0.1-0.4-0.1-0.9,0.1-1.4l1.2-2.5c0.2-0.5,0.6-0.8,1.1-0.9
+            c0.5-0.2,1.1-0.1,1.6,0.2c0.5,0.3,0.9,0.8,1,1.2c0.1,0.5,0,1-0.3,1.4l-1.6,2.3c-0.3,0.4-0.7,0.7-1.1,0.8
+            C41.8,16.2,41.3,16.2,41,16z"
+        />
+        <path
+          id="mark-7"
+          d="M47.6,22.5c-0.5-0.7-0.1-1.8,0.7-2.4l2.3-1.6c0.9-0.6,2-0.3,2.7,0.7c0.6,1,0.2,2.3-0.7,2.7L50,23.1
+            C49.1,23.6,48,23.3,47.6,22.5z"
+        />
+        <path
+          id="mark-8"
+          d="M50.1,31.5c0-0.9,0.7-1.6,1.8-1.7l2.8-0.3c1-0.1,2,0.8,2,2c0,1.2-0.9,2.1-1.9,2l-2.8-0.2
+            C50.9,33.2,50.1,32.4,50.1,31.5z"
+        />
+        <path
+          id="mark-9"
+          d="M47.7,40.6c0.2-0.4,0.6-0.6,1-0.7c0.4-0.1,0.9-0.1,1.4,0.1l2.5,1.2c0.5,0.2,0.8,0.6,0.9,1.1
+            c0.2,0.5,0.1,1.1-0.2,1.6c-0.3,0.5-0.8,0.9-1.2,1c-0.5,0.1-1,0-1.4-0.3L48.4,43c-0.4-0.3-0.7-0.7-0.8-1.1
+            C47.5,41.4,47.5,41,47.7,40.6z"
+        />
+      </g>
+      <g>
+        <g>
+          <path
+            class="dial"
+            d="m20.242 38.788c.283.49 .933.768 1.397.581l5.29-1.585 3.486-1.033c0 0 0 0 0 0 .097.026
+              .193.052 .29.078 2.705.725
+              5.399-.831 6.124-3.536.026-.097.052-.193.078-.29.454-2.467-.864-4.89-3.253-5.634-.097-.026-.193-.052-.29-.078-2.705-.725-5.399.831-6.124
+              3.536-.026.097-.052.193-.078.29 0 0 0 0 0 0l-2.638 2.503-4.018 3.789c-.49.283-.549.888-.266
+              1.378z"
+            style="transform-origin: 32px 32px"
+          />
+        </g>
+        <g class="dial-anchor">
+          <circle cx="32" cy="32" r="5"/>
+          <circle cx="32" cy="32" r="1"/>
+        </g>
+      </g>
+      <g class="display">
+        <rect
+          class="viewport"
+          height="8"
+          rx="2"
+          width="16"
+          x="24"
+          y="44"
+        />
+        <text
+          class="value"
+          dominant-baseline="middle"
+          font-size="6"
+          text-anchor="middle"
+          x="32"
+          y="48.5"
+        >
+        </text>
+	    </g>
+    </svg>
+    <script>
+      (function () {
+        function num(value) {
+          var n = Number(value);
+
+          if (typeof value === 'string' && !Number.isNaN(n)) {
+            return n;
+          } else if (typeof value === 'number') {
+            return n;
+          }
+          return 0;
+        }
+        function scale(max, min, current) {
+          /**
+           * There are 240 degrees to 100%.
+          */
+          var range = max - min,
+            percent = (current - min) / (range || 1),
+            degrees = percent * 240;
+
+          return degrees;
+        }
+
+        [].slice.call(document.getElementsByClassName('speedometer'))
+          .forEach(function (speedometer) {
+            var indicator = speedometer.getElementsByClassName('dial').item(0),
+              display = speedometer.getElementsByTagName('text').item(0);
+
+            Object.defineProperty(indicator, 'degrees', {
+              enumerable: true,
+              set: function(value) {
+                this.style.transform = 'rotate(' + num(value) + 'deg)';
+              }
+            });
+
+            Object.defineProperty(speedometer, 'display', {
+              enumerable: true,
+              value: display
+            });
+            Object.defineProperty(speedometer, 'indicator', {
+              enumerable: true,
+              value: indicator
+            });
+
+            Object.defineProperty(speedometer, 'max', {
+              enumerable: true,
+              get: function () {
+                return num(this.getAttribute('data-valuemax'));
+              },
+              set: function (value) {
+                this.setAttribute('data-valuemax', num(value));
+              }
+            });
+            Object.defineProperty(speedometer, 'min', {
+              enumerable: true,
+              get: function () {
+                return num(this.getAttribute('data-valuemin'));
+              },
+              set: function (value) {
+                this.setAttribute('data-valuemin', num(value));
+              }
+            });
+            Object.defineProperty(speedometer, 'value', {
+              enumerable: true,
+              get: function() {
+                return num(this.getAttribute('data-valuenow'));
+              },
+              set: function(value) {
+                var normalized = Math.min(this.max, Math.max(this.min, num(value))),
+                  degrees = scale(this.max, this.min, normalized);
+
+                this.indicator.degrees = degrees;
+                this.setAttribute('data-valuenow', normalized);
+                display.innerHTML = normalized;
+              }
+            });
+          });
+      })();
+    </script>
+    <fieldset>
+      <legend>Adjust the Speed</legend>
+      <input type="text" id="svg-value" oninput="set()" />
+      <button aria-label="increase" type="button" onclick="increase()">+</button>
+      <button aria-label="decrease" type="button" onclick="decrease()">-</button>
+    </fieldset>
+    <script>
+      var svg = document.getElementsByClassName('speedometer').item(0),
+        input = document.getElementById('svg-value');
+
+      svg.min = 0;
+      svg.max = 240;
+      svg.value = 0;
+
+      function decrease() {
+        svg.value -= 30;
+        input.value = svg.value;
+      }
+      function increase() {
+        svg.value += 30;
+        input.value = svg.value;
+      }
+      function set() {
+        svg.value = input.value;
+      }
+    </script>
+  </body>
+</html>
