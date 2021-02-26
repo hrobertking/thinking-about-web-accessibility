@@ -25,7 +25,8 @@
       <p>
         This page will demonstrate one of the problems with relying on tests of page load when there are interactions on a page.
         Automated testing should identify 2 luminance contrast ratio failures when the test block is visible, and only 1 failure
-        when the test block is hidden.
+        when the test block is hidden. To demonstrate how this can be dangerous, the page is loaded with the <em>dynamic content</em>
+        hidden, and the user must click the "<strong>Show</strong>" button to show the content.
       </p>
       <div id="always-pass">
         <p>This block is visible and should pass SC 1.4.3.</p>
@@ -36,7 +37,7 @@
       <div aria-hidden="false" class="fail-1-4-3" id="test-block">
         <p>This block toggles between visible and invisible and should pass when invisible and fail when visible.
       </div>
-      <button id="toggle-button" onclick="toggle()" type="button">Toggle test block</button>
+      <button id="toggle-button" onclick="toggle()" type="button">Show</button>
     </div>
   </body>
 </html>
