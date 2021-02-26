@@ -20,49 +20,45 @@
     <link href="carousel.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Carousel</h1>
-    <section class="carousel" data-delay="3" id="mycarousel">
-      <div class="gallery">
-        <button aria-label="Previous" name="previous" type="button">❮</button>
-        <ul class="viewer">
-          <li aria-labelledby="mc-tab1" id="mc-panel1" role="tabpanel">
-            <figure>
-              <img alt="Widgets R Us, product one" src="images/product-one.png"/>
-              <figcaption>
-                Product One is our most basic version.
-              </figcaption>
-            </figure>
-          </li>
-          <li aria-labelledby="mc-tab2" id="mc-panel2" role="tabpanel">
-            <figure>
-              <img alt="Widgets R Us, product two" src="images/product-two.png"/>
-              <figcaption>
-                Product Two has all the features of Product One
-                <em>plus</em> a large grin.
-              </figcaption>
-            </figure>
-          </li>
-          <li aria-labelledby="mc-tab3" id="mc-panel3" role="tabpanel">
-            <figure>
-              <img alt="Widgets R Us, product three"
-                src="images/product-three.png"/>
-              <figcaption>
-                Product Three has all the features of Product Two
-                <em>plus</em> sunglasses, a Hawaiian shirt, and a drink in a coconut.
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
-        <button aria-label="Next" name="next" type="button">❯</button>
-      </div>
-      <div class="indicator">
-        <ul role="presentation">
-          <li role="presentation">
-            <button aria-label="play" name="play" type="button"></button>
-          </li>
-        </ul>
-        <ul aria-label="Product Gallery" role="tablist">
-          <li role="presentation">
+    <div role="main">
+      <h1>Carousel</h1>
+      <section class="carousel" data-delay="3" id="mycarousel">
+        <div class="gallery">
+          <button aria-label="Previous" name="previous" type="button">❮</button>
+          <div class="viewer">
+            <div aria-labelledby="mc-tab1" id="mc-panel1" role="tabpanel">
+              <figure>
+                <img alt="Widgets R Us, product one" src="images/product-one.png"/>
+                <figcaption>
+                  Product One is our most basic version.
+                </figcaption>
+              </figure>
+            </div>
+            <div aria-labelledby="mc-tab2" id="mc-panel2" role="tabpanel">
+              <figure>
+                <img alt="Widgets R Us, product two" src="images/product-two.png"/>
+                <figcaption>
+                  Product Two has all the features of Product One
+                  <em>plus</em> a large grin.
+                </figcaption>
+              </figure>
+            </div>
+            <div aria-labelledby="mc-tab3" id="mc-panel3" role="tabpanel">
+              <figure>
+                <img alt="Widgets R Us, product three"
+                  src="images/product-three.png"/>
+                <figcaption>
+                  Product Three has all the features of Product Two
+                  <em>plus</em> sunglasses, a Hawaiian shirt, and a drink in a coconut.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <button aria-label="Next" name="next" type="button">❯</button>
+        </div>
+        <div class="indicator">
+          <button aria-label="play" name="play" type="button"></button>
+          <div aria-label="Product Gallery" role="tablist">
             <button
               aria-controls="mc-panel1"
               aria-selected="true"
@@ -70,8 +66,6 @@
               role="tab"
               type="button"
             >1</button>
-          </li>
-          <li role="presentation">
             <button
               aria-controls="mc-panel2"
               aria-selected="false"
@@ -79,8 +73,6 @@
               role="tab"
               type="button"
             >2</button>
-          </li>
-          <li role="presentation">
             <button
               aria-controls="mc-panel3"
               aria-selected="false"
@@ -88,10 +80,10 @@
               role="tab"
               type="button"
             >3</button>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <script src="carousel.js"></script>
+          </div>
+        </div>
+      </section>
+      <script src="carousel.js"></script>
+    </div>
   </body>
 </html>
