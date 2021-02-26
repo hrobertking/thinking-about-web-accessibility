@@ -12,9 +12,10 @@
     </style>
     <script>
       function toggle() {
-        var test = document.getElementById('test-block');
+        var test = document.getElementById('test-block'),
+            hidden = test.getAttribute('aria-hidden');
         
-        test.setAttribute('aria-hidden', test.getAttribute('aria-hidden') !== 'true');
+        test.setAttribute('aria-hidden', hidden !== 'true');
       }
     </script>
   </head>
