@@ -1,0 +1,35 @@
+<html lang="en-US">
+  <head>
+    <title>Sample page to use for automated testing example</title>
+    <style type="text">
+      .fail-1-4-3 {
+        background-color: #fff;
+        color: #ccc;
+      }
+      [aria-hidden="true"] {
+        display: none;
+      }
+    </style>
+    <script>
+      function toggle() {
+        var test = document.getElementById('test-block');
+        
+        test.setAttribute('aria-hidden', test.getAttribute('aria-hidden') !== 'true');
+      }
+    </script>
+  </head>
+  <body>
+    <div role="main">
+      <div id="always-pass">
+        <p>This block is visible and should pass SC 1.4.3.</p>
+      </div>
+      <div class="fail-1-4-3" id="always-fail">
+        <p>This block is visible and will fail SC 1.4.3.</p>
+      </div>
+      <div aria-hidden="false" class="fail-1-4-3" id="test-block">
+        <p>This block toggles between visible and invisible and should pass when invisible and fail when visible.
+      </div>
+      <button onclick="toggle()" type="button">Toggle test block</button>
+    </div>
+  </body>
+</html>
