@@ -12,14 +12,14 @@
     index = 0,
     panels = [].slice.call(
       el.getElementsByClassName('viewer').item(0)
-        .getElementsByTagName('li')
+        .getElementsByTagName('div')
     ),
     tablist = [].slice.call(
-      el.getElementsByTagName('ul')
+      el.getElementsByTagName('div')
     ).filter(list => list.getAttribute('role') === 'tablist')[0],
     tabs = [].slice.call(
-      tablist.getElementsByTagName('li')
-    ).map(li => li.getElementsByTagName('button').item(0)),
+      tablist.getElementsByTagName('button')
+    ),
     next = function next() {
       index += 1;
       index %= tabs.length;
