@@ -18,20 +18,21 @@
         aria-describedby="table-status"
         aria-labelledby="table-caption"
         class="banded borderless"
+        id="simple-table"
       >
         <caption id="table-caption">10 Busiest Airports</caption>
         <thead>
           <tr role="row">
-            <th aria-sort="none" role="columnheader" scope="col">
+            <th aria-sort="none" id="airport-name-col" role="columnheader" scope="col">
               Airport Name
             </th>
-            <th aria-sort="none" role="columnheader" scope="col">
+            <th aria-sort="none" id="airport-code-col" role="columnheader" scope="col">
               Airport Code
             </th>
-            <th aria-sort="none" role="columnheader" scope="col">
+            <th aria-sort="none" id="airport-country-col" role="columnheader" scope="col">
               Country
             </th>
-            <th aria-sort="none" role="columnheader" scope="col">
+            <th aria-sort="none" id="airport-passengers-col" role="columnheader" scope="col">
               Passengers
             </th>
           </tr>
@@ -106,6 +107,7 @@
       <table
         aria-describedby="table-rg-status"
         aria-labelledby="table-rg-caption"
+        id="multi-level-headers"
       >
         <caption id="table-rg-caption">10 Busiest Airports</caption>
         <thead>
@@ -229,6 +231,7 @@
       <table
         aria-describedby="table-rg-cg-status"
         aria-labelledby="table-rg-cg-caption"
+        id="complex-groups"
         style="width: 60%"
       >
         <caption id="table-rg-cg-caption">Sales</caption>
@@ -378,6 +381,7 @@
       <table
         aria-describedby="table-rg-cg-status"
         aria-labelledby="table-rg-cg-caption"
+        id="form-elements"
         style="width: 60%"
       >
         <caption id="table-rg-cg-caption">Sales</caption>
