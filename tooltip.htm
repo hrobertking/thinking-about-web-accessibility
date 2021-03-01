@@ -11,10 +11,10 @@
     <section>
       <h2>Tooltip beside input</h2>
       <span class="field">
-        <label for="tid">Tax ID Number (required)</label>
-        <input aria-describedby="tid-description tid-tooltip" aria-invalid="false" id="tid" type="text" />
+        <label for="tid-1">Tax ID Number (required)</label>
+        <input aria-describedby="tid-description-1 tid-tooltip-1" aria-invalid="false" id="tid-1" type="text" />
         <span role="status"></span>
-        <span role="tooltip" tabindex="0">
+        <span aria-labelledby"tid-tooltip-1" role="tooltip" tabindex="0">
           <svg alt="" aria-hidden="true" role="presentation"
             xmlns="http://www.w3.org/2000/svg" version="1.1"
             viewBox="0 0 1024 1024"
@@ -34,21 +34,21 @@
               50.21z"
             />
           </svg>
-          <span id="tid-tooltip" role="alert">
+          <span id="tid-tooltip-1" role="alert">
             We are required by law to collect this information; however, it will
             not be shared.
           </span>
         </span>
-        <span class="hint" id="tid-description">999-99-9999</span>
+        <span class="hint" id="tid-description-1">999-99-9999</span>
       </span>
     </section>
 
     <section>
       <h2>Tooltip in field label</h2>
       <span class="field">
-        <label for="tid">
+        <label for="tid-2">
           Tax ID Number (required)
-          <span role="tooltip" tabindex="0">
+          <span aria-labelledby="tid-tooltip-2" role="tooltip" tabindex="0">
             <svg alt="" aria-hidden="true" role="presentation"
               xmlns="http://www.w3.org/2000/svg" version="1.1"
               viewBox="0 0 1024 1024"
@@ -68,17 +68,17 @@
                 50.21z"
               />
             </svg>
-            <span id="tid-tooltip" role="alert">
+            <span id="tid-tooltip-2" role="alert">
               We are required by law to collect this information; however, it
               will not be shared.
             </span>
           </span>
         </label>
-        <input aria-describedby="tid-description tid-tooltip" aria-invalid=""
-          id="tid" type="text"
+        <input aria-describedby="tid-description-2 tid-tooltip-2" aria-invalid=""
+          id="tid-2" type="text"
         />
         <span role="status"></span>
-        <span class="hint" id="tid-description">999-99-9999</span>
+        <span class="hint" id="tid-description-2">999-99-9999</span>
       </span>
     </section>
     <script src="tooltip.js"></script>
