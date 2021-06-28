@@ -38,7 +38,7 @@
     <script>
       const description = document.getElementById('standard-date-text');
 
-      document.getElementById('standard-date').addEventListener('input', function (evt) {
+      document.getElementById('standard-date').addEventListener('change', function (evt) {
         const { target } = evt;
         const lc = target.getAttribute('data-lang');
         const dt = target.getAttribute('data-value');
