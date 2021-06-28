@@ -20,7 +20,7 @@
     <h2>Date input example</h2>
     <span class="field date">
       <label for="standard-date">
-        Standard Date
+        der Termin
         <span class="data-format">dd/mm/yyyy</span>
       </label>
       <span class="input">
@@ -34,24 +34,50 @@
         <span role="status"></span>
       </span>
     </span>
-    <span class="hint" id="standard-date-hint">
-      Please enter month, day, and year, separated by a stroke,
-      e.g., December 31 as 12/31/2018. The date will be shown in German.
-    </span>
+    <span class="hint" id="standard-date-text"></span>
+    <script>
+      const description = document.getElementById('standard-date-text');
+
+      document.getElementById('standard-date').addEventListener('input', function (evt) {
+        const { target } = evt;
+        const lc = target.getAttribute('data-lang');
+        const dt = target.getAttribute('data-value');
+        const dd = dt ? new Date(dt) : null;
+        
+        if (dd) {
+          description.setAttribute('lang', lc);
+          description.innerHTML = dd.toLocaleString(lc);
+        }
+      });
+    </script>
     <script src="date.js"></script>
     
     <h2>Textbox with character counter</h2>
-    <span class="field textarea counter">
-      <label for="textbox">
+    <span class="field textarea" data-counter="character">
+      <label for="character-counter-textbox">
         Sentences using latin alphabet letters
       </label>
-      <span class="input">
-        <textarea aria-describedby="textbox-hint" id="textbox">
-          The quick brown fox jumps over the lazy dog.
-        </textarea>
-      </span>
-      <span aria-live="polite" class="hint" id="textbox-hint">
+      <textarea
+        aria-describedby="character-counter-textbox-hint"
+        id="character-counter-textbox"
+        maxlength="200">The quick brown fox jumps over the lazy dog.</textarea>
+      <span aria-live="polite" class="hint" id="character-counter-textbox-hint">
         You can enter up to 200 characters.
       </span>
+    </span>
+    
+    <h2>Textbox with word counter</h2>
+    <span class="field textarea" data-counter="word" data-max-words="20">
+      <label for="word-counter-textbox">
+        Sentences using latin alphabet letters
+      </label>
+      <textarea
+        aria-describedby="word-counter-textbox-hint"
+        id="word-counter-textbox"
+        maxlength="200">The quick brown fox jumps over the lazy dog.</textarea>
+      <span aria-live="polite" class="hint" id="word-counter-textbox-hint">
+        You can enter up to 20 words.
+      </span>
+    </span>
   </body>
 </html>
