@@ -7,6 +7,6 @@
   });
   Object.defineProperty(input, 'wordCount', {
     enumerable: true,
-    get: function () { return this.value.split(' ').length; }
+    get: function () { return this.value.trim().split(' ').length; }
   });
 });
