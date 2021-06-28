@@ -42,11 +42,11 @@
         const { target } = evt;
         const lc = target.getAttribute('data-lang');
         const dt = target.getAttribute('data-value');
-        const dd = dt ? new Date(dt) : null;
+        const dd = dt ? (new Date(dt)).toLocaleString(lc, { weekday: 'long', year: 'numeric', month: 'long' day: 'numeric' }) : null;
         
-        if (dd) {
+        if (!/invalid/i.test(dd)) {
           description.setAttribute('lang', lc);
-          description.innerHTML = dd.toLocaleString(lc);
+          description.innerHTML = dd;
         }
       });
     </script>
