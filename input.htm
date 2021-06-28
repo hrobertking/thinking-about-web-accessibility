@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Input</title>
+    <meta charset="UTF-8">
+    <link href="field.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Input</h1>
+    <p>
+      In many cases, the accessibility interface with input types other than <em>text</em> will be suboptimal. For example, a
+      native date input will offer the date parts, month, day, and year, as individual lists, and the format cannot be controlled
+      by the author, further reducing the accessibility.
+    </p>
+    <p>
+      To avoid this situation, use a <em>text</em> type for inputs, and extend the functionality through scripting and add helpful
+      content to ensure better accessibility.
+    </p>
+
+    <h2>Date input example</h2>
+    <span class="field date">
+      <label for="standard-date">
+        Standard Date
+        <span class="data-format">dd/mm/yyyy</span>
+      </label>
+      <span class="input">
+        <input
+          aria-describedby="standard-date-hint"
+          data-format="dd/mm/yyyy"
+          data-lang="de-DE"
+          id="standard-date"
+          type="text"
+        />
+        <span role="status"></span>
+      </span>
+    </span>
+    <span class="hint" id="standard-date-hint">
+      Please enter month, day, and year, separated by a stroke,
+      e.g., December 31 as 12/31/2018. The date will be shown in German.
+    </span>
+    <script src="date.js"></script>
+    
+    <h2>Textbox with character counter</h2>
+    <span class="field textarea counter">
+      <label for="textbox">
+        Sentences using latin alphabet letters
+      </label>
+      <span class="input">
+        <textarea aria-describedby="textbox-hint" id="textbox">
+          The quick brown fox jumps over the lazy dog.
+        </textarea>
+      </span>
+      <span aria-live="polite" class="hint" id="textbox-hint">
+        You can enter up to 200 characters.
+      </span>
+  </body>
+</html>
