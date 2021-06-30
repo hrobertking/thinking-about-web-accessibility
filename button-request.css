@@ -23,7 +23,7 @@ button.request[aria-busy] > [role="presentation"] {
   border-radius: 50%;
   font-size: 1.5em;
   height: 0.1em;
-  margin: -0.5em 0;
+  margin: 0.5em -2em;
   position: absolute;
   text-indent: -9999em;
   width: 0.1em;
