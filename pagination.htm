@@ -7,14 +7,20 @@
   </head>
   <body>
     <h1>Pagination</h1>
+    <p>There are two approaches to <strong><em>Pagination</em></strong>: a group of links that navigate to static pages and
+      a group of buttons that load paged data into a resource. The group of links, a navigation list, is straightforward; however,
+      the group of buttons is a little more complex, because it is more like a <strong><em>tablist</em></strong> but does not
+      meet all the requirements of a <strong><em>Tab</em></strong>. The primary difference is that where the <strong><em>navigation</em></strong>
+      uses <em>aria-current</em>, the button group uses <em>aria-selected</em>.
+    </p>
     <section>
       <h2>HTML for a Navigational List</h2>
       <ol aria-label="pages" class="pagination" role="navigation">
         <li>
           <a href="/page1">1</a>
         </li>
-        <li aria-current="page">
-          <a href="/page2">2</a>
+        <li>
+          <a aria-current="page" href="/page2">2</a>
         </li>
         <li>
           <a href="/page3">3</a>
@@ -34,8 +40,8 @@
         <li>
           <button type="button">1</button>
         </li>
-        <li aria-current="page">
-          <button type="button">2</button>
+        <li>
+          <button aria-selected="true" type="button">2</button>
         </li>
         <li>
           <button type="button">3</button>
