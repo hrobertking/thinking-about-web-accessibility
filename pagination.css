@@ -23,8 +23,8 @@ ol.pagination li > button {
   text-decoration: none;
   width: 2rem;
 }
-ol.pagination li[aria-current="page"] > a,
-ol.pagination li[aria-current="page"] > button {
+ol.pagination li > a[aria-current="page"],
+ol.pagination li > button[aria-selected="true"] {
   background-color: hsl(204, 100%, 50%);
   color: hsl(204, 100%, 95%);
 }
