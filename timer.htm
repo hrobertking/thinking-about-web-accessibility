@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <link href="timer.css" rel="stylesheet" />
     <style type="text/css">
+      .timer > time {
+        display: none;
+      }
+      .timer.elapsed > time.elapsed,
+      .timer.remaining > time.remaining,
+      [class="timer"] > time {
+        display: inline;
+      }
       .timer.expired {
         border-color: red;
       }
@@ -16,22 +24,22 @@
       <h2>HTML for a Counting Timer</h2>
       <p>The elapsed time is set to 1:00, showing 1:00 has already passed.</p>
       <h3 id="elapsed">Elapsed Time</h3>
-      <div aria-labelledby="elapsed" class="timer" id="elapsed-timer">
+      <div aria-labelledby="elapsed" class="timer elapsed" id="elapsed-timer">
         <time class="elapsed">01:00</time>
         <time class="remaining">00:00</time>
       </div>
       <button type="button" onclick="window['elapsed-timer'].start();">
-        Start Countdown
+        Start Timer
       </button>
       <button type="button" onclick="window['elapsed-timer'].stop();">
-        Stop Countdown
+        Stop Timer
       </button>
     </section>
 
     <section>
       <h2>HTML for a Countdown Timer</h2>
       <h3 id="countdown-label">Countdown Clock</h3>
-      <div aria-labelledby="countdown-label" class="timer" id="time-remaining">
+      <div aria-labelledby="countdown-label" class="timer remaining" id="time-remaining">
         <time class="elapsed" data-format="00:00:00">00:00</time>
         <time class="remaining" data-format="00:00:00">1:00:00</time>
       </div>
@@ -51,10 +59,10 @@
         <time class="remaining">01:30</time>
       </div>
       <button type="button" onclick="window['csr-elapsed'].start();">
-        Start Timer
+        Start Dual-purpose Timer
       </button>
       <button type="button" onclick="window['csr-elapsed'].stop();">
-        Stop Timer
+        Stop Dual-purpose Timer
       </button>
     </section>
     <script src="timer.js"></script>
